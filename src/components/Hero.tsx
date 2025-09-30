@@ -1,22 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
-
 const Hero = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-background to-background" />
       
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float opacity-60" />
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary/50 rounded-full animate-float opacity-40" style={{ animationDelay: "1s" }} />
-        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-primary/30 rounded-full animate-float opacity-50" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary/50 rounded-full animate-float opacity-40" style={{
+        animationDelay: "1s"
+      }} />
+        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-primary/30 rounded-full animate-float opacity-50" style={{
+        animationDelay: "2s"
+      }} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -24,12 +27,8 @@ const Hero = () => {
           {/* Profile Picture */}
           <div className="mb-8 inline-block">
             <div className="relative w-40 h-40 mx-auto">
-              <img 
-                src={profilePhoto} 
-                alt="Shaik Arafath - AI & Machine Learning Engineer" 
-                className="w-full h-full rounded-full object-cover border-4 border-primary shadow-lg"
-              />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-transparent"></div>
+              <img src={profilePhoto} alt="Shaik Arafath - AI & Machine Learning Engineer" className="w-full h-full rounded-full object-cover border-4 border-primary shadow-lg" />
+              
             </div>
           </div>
 
@@ -55,21 +54,12 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="group font-poppins font-semibold text-base px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/50 transition-all duration-300"
-              onClick={() => scrollToSection('projects')}
-            >
+            <Button size="lg" className="group font-poppins font-semibold text-base px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/50 transition-all duration-300" onClick={() => scrollToSection('projects')}>
               View My Work
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="font-poppins font-semibold text-base px-8 py-6 border-2 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
-              onClick={() => scrollToSection('contact')}
-            >
+            <Button size="lg" variant="outline" className="font-poppins font-semibold text-base px-8 py-6 border-2 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300" onClick={() => scrollToSection('contact')}>
               Get In Touch
             </Button>
           </div>
@@ -98,8 +88,6 @@ const Hero = () => {
           <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
