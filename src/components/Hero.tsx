@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -20,6 +21,18 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+          {/* Profile Picture */}
+          <div className="mb-8 inline-block">
+            <div className="relative w-40 h-40 mx-auto">
+              <img 
+                src={profilePhoto} 
+                alt="Shaik Arafath - AI & Machine Learning Engineer" 
+                className="w-full h-full rounded-full object-cover border-4 border-primary shadow-lg"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-transparent"></div>
+            </div>
+          </div>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <Sparkles className="w-4 h-4 text-primary" />
