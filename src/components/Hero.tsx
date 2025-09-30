@@ -48,11 +48,11 @@ const Hero = () => {
           {/* Social Links - Prominent */}
           <div className="flex flex-wrap gap-4 justify-center items-center mb-12">
             <a 
-              href="mailto:skarafatg79@gmail.com"
+              href="mailto:skarafath79@gmail.com"
               className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
             >
               <Mail className="w-5 h-5 text-primary" />
-              <span className="font-inter font-medium">skarafatg79@gmail.com</span>
+              <span className="font-inter font-medium">skarafath79@gmail.com</span>
             </a>
             <a 
               href="https://github.com/skarafath79"
