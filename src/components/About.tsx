@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Brain, Target, TrendingUp, GraduationCap, MapPin, Heart, Users } from "lucide-react";
+import { Brain, Target, TrendingUp, GraduationCap, MapPin, Heart, Users, Briefcase, Sparkles, Globe, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
 
 const About = () => {
   return (
@@ -18,10 +18,138 @@ const About = () => {
           <div className="mb-12 animate-fade-in-up">
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
               <p className="text-lg text-muted-foreground font-inter leading-relaxed text-center max-w-4xl mx-auto">
-                A motivated and aspiring B.Tech student with a strong academic foundation from Khammam, Telangana. 
-                Passionate about exploration, adventure, and technology. A helpful and caring individual who is 
-                always ready to support family and others in need.
+                A motivated and aspiring B.Tech CSE 3rd Year student with a strong academic foundation from Khammam, Telangana. 
+                Co-Founder & AI/ML Lead at Bit Benders, passionate about building AI-powered solutions that empower students. 
+                Combining academic excellence with innovation, technology, and a drive to create meaningful impact.
               </p>
+            </Card>
+          </div>
+
+          {/* Professional Experience */}
+          <div className="mb-16 animate-fade-in-up">
+            <h3 className="text-3xl font-poppins font-bold mb-8 text-center flex items-center justify-center gap-3">
+              <Briefcase className="w-8 h-8 text-primary" />
+              Professional Experience
+            </h3>
+            <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="p-4 rounded-xl bg-primary/10 border-2 border-primary/30">
+                  <Sparkles className="w-8 h-8 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
+                    <div>
+                      <h4 className="font-poppins font-bold text-2xl mb-2 text-primary">Co-Founder & AI/ML Lead</h4>
+                      <p className="text-xl font-semibold text-foreground mb-1">Bit Benders</p>
+                      <p className="text-muted-foreground font-inter">B.Tech CSE 3rd Year | Student Innovator</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground font-inter leading-relaxed mb-6">
+                    As Co-Founder and AI/ML Lead at Bit Benders, I work on designing and developing AI-powered solutions 
+                    that support students in their learning and career growth.
+                  </p>
+
+                  <div className="mb-6">
+                    <h5 className="font-poppins font-semibold text-lg mb-4 flex items-center gap-2">
+                      <Target className="w-5 h-5 text-primary" />
+                      Key Responsibilities
+                    </h5>
+                    <div className="space-y-3 ml-7">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                        <p className="font-inter text-foreground">Leading the AI/ML initiatives within Bit Benders</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                        <p className="font-inter text-foreground">Building tools such as AI Roadmap Generator, AI Resume Builder, and AI Code Reviewer</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                        <p className="font-inter text-foreground">Researching and experimenting with machine learning models for real-world student use cases</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                        <p className="font-inter text-foreground">Collaborating with the team to create a complete student ecosystem that helps peers learn, build, earn, and connect</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h5 className="font-poppins font-semibold text-lg mb-4 flex items-center gap-2">
+                      <Brain className="w-5 h-5 text-primary" />
+                      Impact & Vision
+                    </h5>
+                    <p className="text-muted-foreground font-inter leading-relaxed ml-7">
+                      This role allows me to combine my academic journey in B.Tech CSE (3rd year) with my passion for 
+                      innovation, AI, and student empowerment. Building solutions that make a real difference in students' lives.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-border/50">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Globe className="w-5 h-5 text-primary" />
+                      <h5 className="font-poppins font-semibold text-lg">Connect with Bit Benders</h5>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      <a 
+                        href="https://bitbenders.xyz/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Globe className="w-4 h-4" />
+                        Website
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/company/bitbenders/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                      </a>
+                      <a 
+                        href="https://www.instagram.com/bit_benders?igsh=MXAxYndyODZsam9xYw==" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Instagram className="w-4 h-4" />
+                        Instagram
+                      </a>
+                      <a 
+                        href="https://x.com/Bitbenders0" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Twitter className="w-4 h-4" />
+                        X (Twitter)
+                      </a>
+                      <a 
+                        href="https://www.youtube.com/channel/UCMQopVnZOfAW_wIWJ4gaYuQ" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Youtube className="w-4 h-4" />
+                        YouTube
+                      </a>
+                      <a 
+                        href="https://www.threads.com/@bit_benders" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Target className="w-4 h-4" />
+                        Threads
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           </div>
 
