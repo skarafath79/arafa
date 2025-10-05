@@ -8,6 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Light mode colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 280 90% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 190 90% 55%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 280 90% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens - Light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(280 90% 65%) 0%, hsl(190 90% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(280 90% 65% / 0.1) 0%, hsl(190 90% 55% / 0.1) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --glow-primary: 0 0 60px hsl(280 90% 65% / 0.3);
+    --glow-accent: 0 0 60px hsl(190 90% 55% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark mode colors */
     --background: 220 26% 14%;
     --foreground: 210 40% 98%;
 
@@ -36,15 +78,12 @@ All colors MUST be HSL.
     --input: 220 26% 25%;
     --ring: 280 90% 65%;
 
-    --radius: 0.75rem;
-
-    /* Custom design tokens */
+    /* Custom design tokens - Dark mode */
     --gradient-primary: linear-gradient(135deg, hsl(280 90% 65%) 0%, hsl(190 90% 55%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(280 90% 65% / 0.1) 0%, hsl(190 90% 55% / 0.1) 100%);
     --gradient-card: linear-gradient(135deg, hsl(224 27% 18%) 0%, hsl(220 26% 20%) 100%);
     --glow-primary: 0 0 60px hsl(280 90% 65% / 0.4);
     --glow-accent: 0 0 60px hsl(190 90% 55% / 0.4);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
