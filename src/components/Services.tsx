@@ -1,28 +1,72 @@
 import { Card } from "@/components/ui/card";
-import { BarChart3, Code } from "lucide-react";
+import { Stethoscope, Heart, Shield, Users, Baby, Eye, Activity, Pill } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: BarChart3,
-      title: "Data Analysis",
-      description: "Transforming complex datasets into clear, actionable insights. I utilize Python libraries like Pandas and Matplotlib to analyze, visualize, and interpret data to drive decision-making.",
+      icon: Stethoscope,
+      title: "General Medicine",
+      description: "Comprehensive primary healthcare services for patients of all ages. From routine check-ups to managing chronic conditions, we provide personalized medical care with a focus on prevention and wellness.",
       features: [
-        "Statistical Analysis",
-        "Data Visualization",
-        "Pattern Recognition",
-        "Predictive Modeling"
+        "Routine Health Check-ups",
+        "Chronic Disease Management",
+        "Preventive Care",
+        "Health Screenings"
       ]
     },
     {
-      icon: Code,
-      title: "Python Development",
-      description: "Building custom scripts and solutions to automate tasks and solve problems efficiently. From data processing to backend logic, I deliver clean and effective Python code.",
+      icon: Heart,
+      title: "Cardiology Care",
+      description: "Specialized cardiovascular health services including blood pressure monitoring, heart disease prevention, and management of cardiac conditions to keep your heart healthy.",
       features: [
-        "Automation Scripts",
-        "API Integration",
-        "Backend Development",
-        "Algorithm Implementation"
+        "Blood Pressure Monitoring",
+        "ECG Services",
+        "Heart Disease Prevention",
+        "Cardiac Risk Assessment"
+      ]
+    },
+    {
+      icon: Activity,
+      title: "Diabetes Management",
+      description: "Comprehensive diabetes care including blood sugar monitoring, dietary counseling, medication management, and lifestyle guidance to help you live well with diabetes.",
+      features: [
+        "Blood Sugar Monitoring",
+        "Dietary Counseling",
+        "Medication Management",
+        "Lifestyle Guidance"
+      ]
+    },
+    {
+      icon: Baby,
+      title: "Pediatric Care",
+      description: "Specialized healthcare services for infants, children, and adolescents including vaccinations, growth monitoring, and treatment of childhood illnesses.",
+      features: [
+        "Child Vaccinations",
+        "Growth Monitoring",
+        "Pediatric Consultations",
+        "Childhood Illness Treatment"
+      ]
+    },
+    {
+      icon: Shield,
+      title: "Emergency Care",
+      description: "24/7 emergency medical services for urgent health conditions. Our clinic is equipped to handle medical emergencies and provide immediate care when you need it most.",
+      features: [
+        "24/7 Emergency Services",
+        "First Aid Treatment",
+        "Urgent Care",
+        "Medical Emergency Response"
+      ]
+    },
+    {
+      icon: Pill,
+      title: "Pharmacy Services",
+      description: "On-site pharmacy with a wide range of medications and medical supplies. We ensure you get the right medications with proper guidance on usage and dosage.",
+      features: [
+        "Prescription Medications",
+        "Over-the-counter Drugs",
+        "Medical Supplies",
+        "Medication Counseling"
       ]
     }
   ];
@@ -34,16 +78,16 @@ const Services = () => {
           {/* Section header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
-              What I Offer
+              Our Medical Services
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
             <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
-              Professional services leveraging AI and development expertise
+              Comprehensive healthcare services for you and your family
             </p>
           </div>
 
           {/* Services grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card 
                 key={service.title}
