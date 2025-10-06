@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Heart, Users, GraduationCap, MapPin, Stethoscope, Award, Clock, Shield } from "lucide-react";
+import { Brain, Target, TrendingUp, GraduationCap, MapPin, Heart, Users, Briefcase, Sparkles, Globe, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
 
 const About = () => {
   return (
@@ -9,102 +9,143 @@ const About = () => {
           {/* Section header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
-              About Our Doctor
+              About Me
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
 
-          {/* Doctor Profile */}
+          {/* Personal Profile */}
           <div className="mb-12 animate-fade-in-up">
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
               <p className="text-lg text-muted-foreground font-inter leading-relaxed text-center max-w-4xl mx-auto">
-                Dr. [Father's Name] is a dedicated and experienced medical practitioner serving the community of Khammam, Telangana for over 15 years. 
-                With a passion for providing compassionate healthcare, he has built Taj Clinic as a trusted medical center where families receive 
-                personalized care with modern medical practices and traditional healing wisdom.
+                A motivated and aspiring B.Tech CSE 3rd Year student with a strong academic foundation from Khammam, Telangana. 
+                Co-Founder & AI/ML Lead at Bit Benders, passionate about building AI-powered solutions that empower students. 
+                Combining academic excellence with innovation, technology, and a drive to create meaningful impact.
               </p>
             </Card>
           </div>
 
-          {/* Medical Experience */}
+          {/* Professional Experience */}
           <div className="mb-16 animate-fade-in-up">
             <h3 className="text-3xl font-poppins font-bold mb-8 text-center flex items-center justify-center gap-3">
-              <Stethoscope className="w-8 h-8 text-primary" />
-              Medical Experience
+              <Briefcase className="w-8 h-8 text-primary" />
+              Professional Experience
             </h3>
             <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
               <div className="flex items-start gap-6">
                 <div className="p-4 rounded-xl bg-primary/10 border-2 border-primary/30">
-                  <Award className="w-8 h-8 text-primary" />
+                  <Sparkles className="w-8 h-8 text-primary" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
                     <div>
-                      <h4 className="font-poppins font-bold text-2xl mb-2 text-primary">General Practitioner & Family Doctor</h4>
-                      <p className="text-xl font-semibold text-foreground mb-1">Taj Clinic</p>
-                      <p className="text-muted-foreground font-inter">MBBS | 15+ Years Experience</p>
+                      <h4 className="font-poppins font-bold text-2xl mb-2 text-primary">Co-Founder & AI/ML Lead</h4>
+                      <p className="text-xl font-semibold text-foreground mb-1">Bit Benders</p>
+                      <p className="text-muted-foreground font-inter">B.Tech CSE 3rd Year | Student Innovator</p>
                     </div>
                   </div>
                   
                   <p className="text-muted-foreground font-inter leading-relaxed mb-6">
-                    Dedicated to providing comprehensive healthcare services to families in Khammam and surrounding areas. 
-                    Specializing in preventive care, chronic disease management, and emergency medical services.
+                    As Co-Founder and AI/ML Lead at Bit Benders, I work on designing and developing AI-powered solutions 
+                    that support students in their learning and career growth.
                   </p>
 
                   <div className="mb-6">
                     <h5 className="font-poppins font-semibold text-lg mb-4 flex items-center gap-2">
-                      <Shield className="w-5 h-5 text-primary" />
-                      Medical Specialties
+                      <Target className="w-5 h-5 text-primary" />
+                      Key Responsibilities
                     </h5>
                     <div className="space-y-3 ml-7">
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                        <p className="font-inter text-foreground">General Medicine & Family Healthcare</p>
+                        <p className="font-inter text-foreground">Leading the AI/ML initiatives within Bit Benders</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                        <p className="font-inter text-foreground">Preventive Care & Health Screenings</p>
+                        <p className="font-inter text-foreground">Building tools such as AI Roadmap Generator, AI Resume Builder, and AI Code Reviewer</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                        <p className="font-inter text-foreground">Chronic Disease Management (Diabetes, Hypertension)</p>
+                        <p className="font-inter text-foreground">Researching and experimenting with machine learning models for real-world student use cases</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                        <p className="font-inter text-foreground">Emergency Medical Care & First Aid</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                        <p className="font-inter text-foreground">Child Healthcare & Immunizations</p>
+                        <p className="font-inter text-foreground">Collaborating with the team to create a complete student ecosystem that helps peers learn, build, earn, and connect</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mb-6">
                     <h5 className="font-poppins font-semibold text-lg mb-4 flex items-center gap-2">
-                      <Heart className="w-5 h-5 text-primary" />
-                      Our Mission
+                      <Brain className="w-5 h-5 text-primary" />
+                      Impact & Vision
                     </h5>
                     <p className="text-muted-foreground font-inter leading-relaxed ml-7">
-                      To provide accessible, affordable, and quality healthcare to every family in our community. 
-                      We believe in treating not just the illness, but caring for the whole person with compassion and respect.
+                      This role allows me to combine my academic journey in B.Tech CSE (3rd year) with my passion for 
+                      innovation, AI, and student empowerment. Building solutions that make a real difference in students' lives.
                     </p>
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-border/50">
                     <div className="flex items-center gap-3 mb-4">
-                      <Clock className="w-5 h-5 text-primary" />
-                      <h5 className="font-poppins font-semibold text-lg">Clinic Hours</h5>
+                      <Globe className="w-5 h-5 text-primary" />
+                      <h5 className="font-poppins font-semibold text-lg">Connect with Bit Benders</h5>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg border border-primary/20">
-                        <span className="font-medium">Monday - Saturday: 9:00 AM - 8:00 PM</span>
-                      </div>
-                      <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg border border-primary/20">
-                        <span className="font-medium">Sunday: 10:00 AM - 2:00 PM</span>
-                      </div>
-                      <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-500 rounded-lg border border-red-500/20">
-                        <span className="font-medium">Emergency: 24/7 Available</span>
-                      </div>
+                    <div className="flex flex-wrap gap-3">
+                      <a 
+                        href="https://bitbenders.xyz/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Globe className="w-4 h-4" />
+                        Website
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/company/bitbenders/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                      </a>
+                      <a 
+                        href="https://www.instagram.com/bit_benders?igsh=MXAxYndyODZsam9xYw==" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Instagram className="w-4 h-4" />
+                        Instagram
+                      </a>
+                      <a 
+                        href="https://x.com/Bitbenders0" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Twitter className="w-4 h-4" />
+                        X (Twitter)
+                      </a>
+                      <a 
+                        href="https://www.youtube.com/channel/UCMQopVnZOfAW_wIWJ4gaYuQ" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Youtube className="w-4 h-4" />
+                        YouTube
+                      </a>
+                      <a 
+                        href="https://www.threads.com/@bit_benders" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Target className="w-4 h-4" />
+                        Threads
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -112,11 +153,11 @@ const About = () => {
             </Card>
           </div>
 
-          {/* Medical Education */}
+          {/* Education Section */}
           <div className="mb-16 animate-fade-in-up">
             <h3 className="text-3xl font-poppins font-bold mb-8 text-center flex items-center justify-center gap-3">
               <GraduationCap className="w-8 h-8 text-primary" />
-              Medical Education
+              Education
             </h3>
             <div className="space-y-6">
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
@@ -125,9 +166,9 @@ const About = () => {
                     <GraduationCap className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-xl mb-2">MBBS (Bachelor of Medicine, Bachelor of Surgery)</h4>
-                    <p className="text-primary font-semibold mb-1">[Medical College Name], Telangana</p>
-                    <p className="text-muted-foreground font-inter">Graduated: [Year]</p>
+                    <h4 className="font-poppins font-semibold text-xl mb-2">B.Tech (Bachelor of Technology)</h4>
+                    <p className="text-primary font-semibold mb-1">Uttaranchal University, Dehradun, Uttarakhand</p>
+                    <p className="text-muted-foreground font-inter">Expected Graduation: 2027</p>
                   </div>
                 </div>
               </Card>
@@ -135,12 +176,12 @@ const About = () => {
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
-                    <Award className="w-6 h-6 text-primary" />
+                    <GraduationCap className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-xl mb-2">Medical Registration</h4>
-                    <p className="text-primary font-semibold mb-1">Telangana State Medical Council</p>
-                    <p className="text-muted-foreground font-inter">Licensed Medical Practitioner</p>
+                    <h4 className="font-poppins font-semibold text-xl mb-2">Intermediate (Arts and Science)</h4>
+                    <p className="text-primary font-semibold mb-1">Krishnaveni Arts and Science College</p>
+                    <p className="text-muted-foreground font-inter">Passed Out: 2022</p>
                   </div>
                 </div>
               </Card>
@@ -148,12 +189,12 @@ const About = () => {
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
-                    <Stethoscope className="w-6 h-6 text-primary" />
+                    <GraduationCap className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-xl mb-2">Continuing Medical Education</h4>
-                    <p className="text-primary font-semibold mb-1">Regular CME Programs & Medical Conferences</p>
-                    <p className="text-muted-foreground font-inter">Updated with Latest Medical Practices</p>
+                    <h4 className="font-poppins font-semibold text-xl mb-2">High School</h4>
+                    <p className="text-primary font-semibold mb-1">Nirmal Hriday High School, Khammam, Telangana</p>
+                    <p className="text-muted-foreground font-inter">Passed Out: 2020</p>
                   </div>
                 </div>
               </Card>
@@ -161,50 +202,57 @@ const About = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Medical Philosophy & Values */}
+            {/* Interests & Hobbies */}
             <div className="animate-fade-in-up">
               <h3 className="text-3xl font-poppins font-bold mb-8 flex items-center gap-3">
                 <Heart className="w-8 h-8 text-primary" />
-                Medical Philosophy
+                Interests & Hobbies
               </h3>
               <div className="space-y-6">
+                <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-poppins font-semibold text-xl mb-2">Travel & Exploration</h4>
+                      <p className="text-muted-foreground font-inter leading-relaxed mb-3">
+                        Keen interest in visiting new places and experiencing different cultures.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {['Ladakh', 'Kashmir', 'Goa', 'Agra', 'Delhi'].map((place) => (
+                          <span key={place} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                            {place}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                      <Target className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-poppins font-semibold text-xl mb-2">Riding</h4>
+                      <p className="text-muted-foreground font-inter leading-relaxed">
+                        Passionate about riding horses, bikes, and cars. Love the thrill of adventure and the freedom of the open road.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
                 <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                       <Heart className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-poppins font-semibold text-xl mb-2">Patient-Centered Care</h4>
-                      <p className="text-muted-foreground font-inter leading-relaxed mb-3">
-                        Every patient is treated with dignity, respect, and compassion. We listen to your concerns and work together to find the best treatment plan.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
-                      <Shield className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-poppins font-semibold text-xl mb-2">Preventive Healthcare</h4>
+                      <h4 className="font-poppins font-semibold text-xl mb-2">Social</h4>
                       <p className="text-muted-foreground font-inter leading-relaxed">
-                        Prevention is better than cure. We focus on health education, regular check-ups, and early detection to keep you and your family healthy.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
-                      <Users className="w-8 h-8 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-poppins font-semibold text-xl mb-2">Community Service</h4>
-                      <p className="text-muted-foreground font-inter leading-relaxed">
-                        Committed to serving the community through health camps, awareness programs, and providing affordable healthcare to all economic backgrounds.
+                        Enjoys spending time with children and helping people in need. Believe in making a positive impact in the community.
                       </p>
                     </div>
                   </div>
@@ -212,11 +260,11 @@ const About = () => {
               </div>
             </div>
 
-            {/* Clinic Information */}
+            {/* Personal Details & Family */}
             <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <h3 className="text-3xl font-poppins font-bold mb-8 flex items-center gap-3">
-                <MapPin className="w-8 h-8 text-primary" />
-                Clinic Information
+                <Users className="w-8 h-8 text-primary" />
+                Personal Details
               </h3>
               
               <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl mb-6">
@@ -224,21 +272,21 @@ const About = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     <p className="font-inter text-foreground">
-                      <span className="font-semibold">Location:</span> Khammam, Telangana
+                      <span className="font-semibold">Nationality:</span> Indian
                     </p>
                   </div>
                   
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.2s" }} />
                     <p className="font-inter text-foreground">
-                      <span className="font-semibold">Established:</span> [Year] - Serving Community for 15+ Years
+                      <span className="font-semibold">Religion:</span> Muslim
                     </p>
                   </div>
                   
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.4s" }} />
                     <p className="font-inter text-foreground">
-                      <span className="font-semibold">Languages:</span> Telugu, Hindi, English
+                      <span className="font-semibold">Location:</span> Khammam, Telangana
                     </p>
                   </div>
                 </div>
@@ -246,42 +294,42 @@ const About = () => {
 
               <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl">
                 <h4 className="font-poppins font-bold text-2xl mb-6 flex items-center gap-3">
-                  <Award className="w-6 h-6 text-primary" />
-                  Why Choose Taj Clinic?
+                  <Users className="w-6 h-6 text-primary" />
+                  Family Background
                 </h4>
                 <p className="text-muted-foreground font-inter leading-relaxed mb-6">
-                  We are committed to providing the highest quality healthcare with a personal touch. 
-                  Our clinic combines modern medical technology with compassionate care to ensure the best outcomes for our patients.
+                  Belong to a close-knit family of five members, including parents and two sisters. 
+                  Family values and support have been instrumental in shaping my journey and aspirations.
                 </p>
                 
                 <div className="mt-8 p-4 bg-primary/10 rounded-lg border border-primary/20">
                   <p className="font-inter text-sm text-center italic text-muted-foreground">
-                    "Your health is our priority, your trust is our foundation."
+                    "Family is not an important thing. It's everything."
                   </p>
                 </div>
               </Card>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 mt-6">
                 <h4 className="font-poppins font-semibold text-xl mb-4 flex items-center gap-3">
-                  <Heart className="w-6 h-6 text-primary" />
-                  Our Values
+                  <Brain className="w-6 h-6 text-primary" />
+                  Core Values
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <p className="font-inter text-foreground">Compassionate Care</p>
+                    <p className="font-inter text-foreground">Helpful & Caring</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <p className="font-inter text-foreground">Medical Excellence</p>
+                    <p className="font-inter text-foreground">Adventure Seeker</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <p className="font-inter text-foreground">Patient Trust</p>
+                    <p className="font-inter text-foreground">Technology Enthusiast</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <p className="font-inter text-foreground">Community Service</p>
+                    <p className="font-inter text-foreground">Community Focused</p>
                   </div>
                 </div>
               </Card>

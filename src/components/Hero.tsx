@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, MapPin, Clock, Stethoscope } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -28,38 +28,51 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
           
           {/* Main headline with gradient */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-poppins font-black mb-8 leading-tight">
+          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-poppins font-black mb-8 leading-tight">
             <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-[gradient_8s_ease_infinite] bg-[length:200%_auto]">
-              Taj Clinic
+              Shaik Arafath
             </span>
           </h1>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-primary/30 mb-8 backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.3)]">
-            <Stethoscope className="w-5 h-5 text-primary" />
-            <span className="text-base font-inter text-foreground font-medium">Your Trusted Village Doctor</span>
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <span className="text-base font-inter text-foreground font-medium">AI & Machine Learning Engineer</span>
           </div>
 
           {/* Sub-headline */}
           <p className="text-xl sm:text-2xl text-muted-foreground font-inter max-w-3xl mx-auto mb-12 leading-relaxed">
-            Providing Quality Healthcare for the Whole Family
-            <span className="block mt-2 text-foreground/80">Compassionate Care • Modern Treatment • Trusted Service</span>
+            3rd-year CS student crafting intelligent solutions with AI & ML. 
+            <span className="block mt-2 text-foreground/80">Turning data into innovation.</span>
           </p>
 
-          {/* Clinic Info - Prominent */}
+          {/* Social Links - Prominent */}
           <div className="flex flex-wrap gap-4 justify-center items-center mb-12">
-            <div className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300">
-              <Phone className="w-5 h-5 text-primary" />
-              <span className="font-inter font-medium">+91 98765 43210</span>
-            </div>
-            <div className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300">
-              <MapPin className="w-5 h-5 text-primary" />
-              <span className="font-inter font-medium">Khammam, Telangana</span>
-            </div>
-            <div className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300">
-              <Clock className="w-5 h-5 text-primary" />
-              <span className="font-inter font-medium">9 AM - 8 PM Daily</span>
-            </div>
+            <a 
+              href="mailto:skarafath79@gmail.com"
+              className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <Mail className="w-5 h-5 text-primary" />
+              <span className="font-inter font-medium">skarafath79@gmail.com</span>
+            </a>
+            <a 
+              href="https://github.com/skarafath79"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <Github className="w-5 h-5 text-primary" />
+              <span className="font-inter font-medium">GitHub</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/shaik-arafath-5b0124354"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <Linkedin className="w-5 h-5 text-primary" />
+              <span className="font-inter font-medium">LinkedIn</span>
+            </a>
           </div>
 
           {/* CTA Buttons */}
@@ -67,9 +80,9 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="group font-poppins font-bold text-base px-10 py-7 bg-gradient-to-r from-primary to-accent hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 text-primary-foreground"
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection('projects')}
             >
-              Our Services
+              View My Work
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
@@ -79,23 +92,23 @@ const Hero = () => {
               className="font-poppins font-bold text-base px-10 py-7 border-2 border-primary/50 bg-card/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all duration-300"
               onClick={() => scrollToSection('contact')}
             >
-              Book Appointment
+              Get In Touch
             </Button>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="text-4xl sm:text-5xl font-poppins font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">15+</div>
+              <div className="text-4xl sm:text-5xl font-poppins font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">3+</div>
               <div className="text-sm text-muted-foreground font-inter">Years Experience</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="text-4xl sm:text-5xl font-poppins font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">1000+</div>
-              <div className="text-sm text-muted-foreground font-inter">Patients Treated</div>
+              <div className="text-4xl sm:text-5xl font-poppins font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">10+</div>
+              <div className="text-sm text-muted-foreground font-inter">Projects</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="text-4xl sm:text-5xl font-poppins font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground font-inter">Emergency Care</div>
+              <div className="text-4xl sm:text-5xl font-poppins font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">3x</div>
+              <div className="text-sm text-muted-foreground font-inter">IEEE Hackathons</div>
             </div>
           </div>
         </div>
