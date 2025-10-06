@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Stethoscope } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -56,6 +56,13 @@ const Contact = () => {
       label: "GitHub",
       href: "https://github.com",
       color: "from-purple-500/20 to-pink-500/20"
+    },
+    {
+      icon: Stethoscope,
+      label: "Taj Clinic",
+      href: "https://taj-clinic.vercel.app/",
+      color: "from-green-500/20 to-emerald-500/20",
+      description: "Medical website I built for my father"
     }
   ];
 
@@ -157,7 +164,7 @@ const Contact = () => {
                               {link.label}
                             </p>
                             <p className="text-sm text-muted-foreground font-inter">
-                              Click to connect
+                              {link.description || "Click to connect"}
                             </p>
                           </div>
                         </div>
