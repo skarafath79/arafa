@@ -37,22 +37,23 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-primary/30 mb-8 backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.3)]">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-base font-inter text-foreground font-medium">AI & Machine Learning Engineer</span>
+            <span className="text-base font-inter text-foreground font-medium">AI & Machine Learning Engineer | Co-Founder at Bit Benders</span>
           </div>
 
           {/* Sub-headline */}
-          <p className="text-xl sm:text-2xl text-muted-foreground font-inter max-w-3xl mx-auto mb-12 leading-relaxed">
-            3rd-year CS student crafting intelligent solutions with AI & ML. 
-            <span className="block mt-2 text-foreground/80">Turning data into innovation.</span>
-          </p>
+          <h2 className="text-xl sm:text-2xl text-muted-foreground font-inter max-w-3xl mx-auto mb-12 leading-relaxed font-normal">
+            B.Tech CSE student and Co-Founder of Bit Benders, crafting intelligent AI/ML solutions. 
+            <span className="block mt-2 text-foreground/80">Empowering students through innovative technology from Khammam, Telangana.</span>
+          </h2>
 
           {/* Social Links - Prominent */}
           <div className="flex flex-wrap gap-4 justify-center items-center mb-12">
             <a 
               href="mailto:skarafath79@gmail.com"
               className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+              aria-label="Send email to Shaik Arafath"
             >
-              <Mail className="w-5 h-5 text-primary" />
+              <Mail className="w-5 h-5 text-primary" aria-hidden="true" />
               <span className="font-inter font-medium">skarafath79@gmail.com</span>
             </a>
             <a 
@@ -60,8 +61,9 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+              aria-label="Visit Shaik Arafath's GitHub profile"
             >
-              <Github className="w-5 h-5 text-primary" />
+              <Github className="w-5 h-5 text-primary" aria-hidden="true" />
               <span className="font-inter font-medium">GitHub</span>
             </a>
             <a 
@@ -69,8 +71,9 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+              aria-label="Visit Shaik Arafath's LinkedIn profile"
             >
-              <Linkedin className="w-5 h-5 text-primary" />
+              <Linkedin className="w-5 h-5 text-primary" aria-hidden="true" />
               <span className="font-inter font-medium">LinkedIn</span>
             </a>
           </div>
