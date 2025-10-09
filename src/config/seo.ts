@@ -1,7 +1,7 @@
 export const seoConfig = {
   // Basic site information
   siteName: "Shaik Arafath Portfolio",
-  siteUrl: "https://shaikarafath.com",
+  siteUrl: "https://shaikarafath.in",
   author: "Shaik Arafath",
   
   // Default meta information
@@ -18,7 +18,7 @@ export const seoConfig = {
   },
   
   // Images
-  defaultImage: "https://shaikarafath.com/og-image.jpg",
+  defaultImage: "https://shaikarafath.in/og-image.jpg",
   favicon: "/favicon.ico",
   
   // Organization info for structured data

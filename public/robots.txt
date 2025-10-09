@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://shaikarafath.com/sitemap.xml
+Sitemap: https://shaikarafath.in/sitemap.xml
 
 # Specific bot permissions
 User-agent: Googlebot

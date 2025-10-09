@@ -13,8 +13,8 @@ const SEO = ({
   title = "Shaik Arafath - AI & Machine Learning Engineer | Co-Founder at Bit Benders",
   description = "Shaik Arafath is a B.Tech CSE student and Co-Founder of Bit Benders, specializing in AI/ML solutions. Explore innovative projects, skills, and experience in artificial intelligence and machine learning from Khammam, Telangana.",
   keywords = "Shaik Arafath, AI Engineer, Machine Learning Engineer, Bit Benders, Co-Founder, B.Tech CSE, Artificial Intelligence, Python, TensorFlow, Data Science, Computer Science Student, Khammam, Telangana",
-  image = "https://shaikarafath.com/og-image.jpg",
-  url = "https://shaikarafath.com/",
+  image = "https://shaikarafath.in/og-image.jpg",
+  url = "https://shaikarafath.in/",
   type = "website"
 }: SEOProps) => {
   
