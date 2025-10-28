@@ -4,31 +4,28 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import MiniApps from "@/components/MiniApps";
-import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import AnimatedLayout from "@/components/AnimatedLayout";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   return (
-    <>
+    <AnimatedLayout>
       <SEO />
-      <div className="min-h-screen bg-background text-foreground font-inter">
-        <ThemeToggle />
-        <main role="main">
-          <Hero />
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <MiniApps />
-          <Services />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </>
+      <ThemeToggle />
+      <main role="main" className="relative z-10">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <MiniApps />
+        <Contact />
+      </main>
+      <Footer />
+    </AnimatedLayout>
   );
 };
 
