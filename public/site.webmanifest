@@ -9,29 +9,29 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon-16x16.png",
+      "src": "/src/assets/favicon.jpg",
       "sizes": "16x16",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "/src/assets/favicon.jpg",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/src/assets/favicon.jpg",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/src/assets/favicon.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/src/assets/favicon.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ],
   "categories": ["portfolio", "technology", "education"],
