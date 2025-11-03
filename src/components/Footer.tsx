@@ -19,11 +19,7 @@ const Footer = () => {
             </div>
 
             {/* Center - Made with love */}
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <span className="text-sm font-inter">Made with</span>
-              <Heart className="w-4 h-4 text-primary fill-primary animate-pulse" />
-              <span className="text-sm font-inter">and code</span>
-            </div>
+            
 
             {/* Right side - Social links */}
             <div className="flex items-center gap-4">
