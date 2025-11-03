@@ -19,7 +19,7 @@ export const seoConfig = {
   
   // Images
   defaultImage: "https://shaikarafath.in/og-image.jpg",
-  favicon: "/favicon.ico",
+  favicon: "/src/assets/favicon.jpg",
   
   // Organization info for structured data
   organization: {
