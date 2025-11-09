@@ -7,7 +7,7 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 sm:animate-fade-in">
             <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
               About Me
             </h2>
@@ -15,8 +15,8 @@ const About = () => {
           </div>
 
           {/* Personal Profile */}
-          <div className="mb-12 animate-fade-in-up">
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
+          <div className="mb-12 sm:animate-fade-in-up">
+            <Card className="p-8 bg-card/50 sm:backdrop-blur-sm border-border/50">
               <p className="text-lg text-muted-foreground font-inter leading-relaxed text-center max-w-4xl mx-auto">
                 A motivated and aspiring B.Tech CSE 3rd Year student with a strong academic foundation from Khammam, Telangana. 
                 Co-Founder & AI/ML Lead at Sikshanext, passionate about building AI-powered solutions that empower students. 
@@ -26,12 +26,12 @@ const About = () => {
           </div>
 
           {/* Professional Experience */}
-          <div className="mb-16 animate-fade-in-up">
+          <div className="mb-16 sm:animate-fade-in-up">
             <h3 className="text-3xl font-poppins font-bold mb-8 text-center flex items-center justify-center gap-3">
               <Briefcase className="w-8 h-8 text-primary" />
               Professional Experience
             </h3>
-            <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+            <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl sm:hover:shadow-2xl sm:hover:shadow-primary/20 transition-all duration-300">
               <div className="flex items-start gap-6">
                 <div className="p-4 rounded-xl bg-primary/10 border-2 border-primary/30">
                   <Sparkles className="w-8 h-8 text-primary" />
@@ -159,8 +159,8 @@ const About = () => {
               <GraduationCap className="w-8 h-8 text-primary" />
               Education
             </h3>
-            <div className="space-y-6">
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              <div className="space-y-6">
+              <Card className="p-6 bg-card/50 sm:backdrop-blur-sm border-border/50 sm:hover:border-primary/30 transition-all duration-300 sm:hover:shadow-lg sm:hover:shadow-primary/10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <GraduationCap className="w-6 h-6 text-primary" />
@@ -171,9 +171,7 @@ const About = () => {
                     <p className="text-muted-foreground font-inter">Expected Graduation: 2027</p>
                   </div>
                 </div>
-              </Card>
-
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              </Card>              <Card className="p-6 bg-card/50 sm:backdrop-blur-sm border-border/50 sm:hover:border-primary/30 transition-all duration-300 sm:hover:shadow-lg sm:hover:shadow-primary/10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <GraduationCap className="w-6 h-6 text-primary" />
@@ -201,15 +199,50 @@ const About = () => {
             </div>
           </div>
 
+          {/* About the Venture - SikshaNext */}
+          <div className="mb-12 sm:animate-fade-in-up">
+            <Card className="p-8 bg-card/50 sm:backdrop-blur-sm border-border/50">
+              <h3 className="text-2xl font-poppins font-bold mb-4">About the Venture</h3>
+              <h4 className="text-xl font-poppins font-semibold mb-2">SikshaNext — Empowering the Next Generation of Learners</h4>
+
+              <p className="text-muted-foreground font-inter leading-relaxed mb-4">
+                SikshaNext is a futuristic educational platform focused on transforming the way students learn, grow, and build real-world skills. It bridges the gap between traditional education and modern technology by offering interactive learning experiences, mentorship programs, and industry-driven skill development courses.
+              </p>
+
+              <p className="text-muted-foreground font-inter leading-relaxed mb-4">
+                Our mission is to make quality education accessible, practical, and future-ready — empowering learners to master emerging technologies, enhance career opportunities, and stay ahead in a rapidly evolving digital world.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                <div>
+                  <h5 className="font-poppins font-semibold mb-2">Key Focus Areas</h5>
+                  <ul className="list-disc list-inside text-muted-foreground font-inter space-y-1">
+                    <li>Tech-driven learning (AI, Web Development, App Development, Data Science)</li>
+                    <li>Skill-based workshops and mentorship</li>
+                    <li>Internship and placement opportunities</li>
+                    <li>Online + community learning ecosystem</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 className="font-poppins font-semibold mb-2">Let's Connect</h5>
+                  <p className="text-muted-foreground font-inter mb-2">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+                  <a href="mailto:contact@sikshanext.com" className="inline-block px-4 py-2 rounded-lg bg-primary text-white font-medium">Send me an email</a>
+                  <p className="text-sm text-muted-foreground mt-4">India</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Interests & Hobbies */}
-            <div className="animate-fade-in-up">
+            <div className="sm:animate-fade-in-up">
               <h3 className="text-3xl font-poppins font-bold mb-8 flex items-center gap-3">
                 <Heart className="w-8 h-8 text-primary" />
                 Interests & Hobbies
               </h3>
               <div className="space-y-6">
-                <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <Card className="p-6 bg-card/50 sm:backdrop-blur-sm border-border/50 sm:hover:border-primary/30 transition-all duration-300 sm:hover:shadow-lg sm:hover:shadow-primary/10">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                       <MapPin className="w-6 h-6 text-primary" />
@@ -230,7 +263,7 @@ const About = () => {
                   </div>
                 </Card>
 
-                <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <Card className="p-6 bg-card/50 sm:backdrop-blur-sm border-border/50 sm:hover:border-primary/30 transition-all duration-300 sm:hover:shadow-lg sm:hover:shadow-primary/10">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                       <Target className="w-6 h-6 text-primary" />
@@ -261,7 +294,7 @@ const About = () => {
             </div>
 
             {/* Personal Details & Family */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div className="sm:animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <h3 className="text-3xl font-poppins font-bold mb-8 flex items-center gap-3">
                 <Users className="w-8 h-8 text-primary" />
                 Personal Details

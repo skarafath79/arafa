@@ -31,9 +31,10 @@ const ParticleBackground = () => {
       constructor() {
         this.x = Math.random() * canvas!.width;
         this.y = Math.random() * canvas!.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
+        const isMobile = window.innerWidth < 640;
+        this.size = Math.random() * (isMobile ? 2 : 3) + 1;
+        this.speedX = Math.random() * (isMobile ? 0.3 : 0.5) - (isMobile ? 0.15 : 0.25);
+        this.speedY = Math.random() * (isMobile ? 0.3 : 0.5) - (isMobile ? 0.15 : 0.25);
         this.color = `hsl(${Math.random() * 60 + 190}, 90%, 60%, ${Math.random() * 0.3 + 0.1})`;
       }
 
@@ -57,7 +58,8 @@ const ParticleBackground = () => {
 
     // Create particles
     const particles: Particle[] = [];
-    const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 10000);
+    const isMobile = window.innerWidth < 640; // sm breakpoint in Tailwind
+const particleCount = Math.floor((window.innerWidth * window.innerHeight) / (isMobile ? 20000 : 10000));
 
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
@@ -85,9 +87,12 @@ const ParticleBackground = () => {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
-            ctx.strokeStyle = `rgba(200, 200, 255, ${1 - distance / 100})`;
-            ctx.lineWidth = 0.5;
+          const isMobile = window.innerWidth < 640;
+          const maxDistance = isMobile ? 80 : 100;
+          if (distance < maxDistance) {
+            const maxDistance = isMobile ? 80 : 100;
+            ctx.strokeStyle = `rgba(200, 200, 255, ${1 - distance / maxDistance})`;
+            ctx.lineWidth = isMobile ? 0.3 : 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);

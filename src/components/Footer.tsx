@@ -10,12 +10,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Left side - Name and copyright */}
             <div className="text-center md:text-left">
-              <h3 className="font-poppins font-bold text-xl mb-2 text-foreground">
-                Shaik Arafath
-              </h3>
-              <p className="text-sm text-muted-foreground font-inter">
-                © {currentYear} All rights reserved.
-              </p>
+                <h3 className="font-poppins font-bold text-xl mb-2 text-foreground">
+                  Shaik Arafath
+                </h3>
+                <p className="text-sm text-muted-foreground font-inter">
+                  © 2025 Shaik Arafath. Built with passion for innovation and education.
+                </p>
             </div>
 
             {/* Center - Made with love */}
@@ -24,7 +24,7 @@ const Footer = () => {
             {/* Right side - Social links */}
             <div className="flex items-center gap-4">
               <a
-                href="mailto:shaik.arafath@example.com"
+                href="mailto:contact@sikshanext.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 hover:scale-110"
