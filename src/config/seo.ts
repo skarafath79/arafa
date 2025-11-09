@@ -5,9 +5,9 @@ export const seoConfig = {
   author: "Shaik Arafath",
   
   // Default meta information
-  defaultTitle: "Shaik Arafath - AI & Machine Learning Engineer | Co-Founder at Bit Benders",
-  defaultDescription: "Shaik Arafath is a B.Tech CSE student and Co-Founder of Bit Benders, specializing in AI/ML solutions. Explore innovative projects, skills, and experience in artificial intelligence and machine learning from Khammam, Telangana.",
-  defaultKeywords: "Shaik Arafath, AI Engineer, Machine Learning Engineer, Bit Benders, Co-Founder, B.Tech CSE, Artificial Intelligence, Python, TensorFlow, Data Science, Computer Science Student, Khammam, Telangana, AI Projects, ML Projects, Student Innovator, IEEE Hackathons",
+  defaultTitle: "Shaik Arafath - AI & Machine Learning Engineer | Co-Founder at SikshaNext",
+  defaultDescription: "Shaik Arafath is a B.Tech CSE student and Co-Founder of Sikshanext, specializing in AI/ML solutions. Explore innovative projects, skills, and experience in artificial intelligence and machine learning from Khammam, Telangana.",
+  defaultKeywords: "Shaik Arafath, AI Engineer, Machine Learning Engineer, Sikshanext, Co-Founder, B.Tech CSE, Artificial Intelligence, Python, TensorFlow, Data Science, Computer Science Student, Khammam, Telangana, AI Projects, ML Projects, Student Innovator, IEEE Hackathons",
   
   // Social media
   social: {
@@ -23,9 +23,9 @@ export const seoConfig = {
   
   // Organization info for structured data
   organization: {
-    name: "Bit Benders",
-    url: "https://bitbenders.xyz",
-    logo: "https://bitbenders.xyz/logo.png"
+    name: "Sikshanext",
+    url: "https://sikshanext.in",
+    logo: "https://sikshanext.in/logo.png"
   },
   
   // Person info for structured data
@@ -58,24 +58,24 @@ export const seoConfig = {
   // Page-specific SEO data
   pages: {
     home: {
-      title: "Shaik Arafath - AI & Machine Learning Engineer | Co-Founder at Bit Benders",
-      description: "B.Tech CSE student and Co-Founder of Bit Benders, specializing in AI/ML solutions. Explore innovative projects, skills, and experience in artificial intelligence and machine learning.",
-      keywords: "Shaik Arafath, AI Engineer, Machine Learning Engineer, Bit Benders, Co-Founder, Portfolio, B.Tech CSE"
+      title: "Shaik Arafath - AI & Machine Learning Engineer | Co-Founder at SikshaNext",
+      description: "B.Tech CSE student and Co-Founder of Sikshanext, specializing in AI/ML solutions. Explore innovative projects, skills, and experience in artificial intelligence and machine learning.",
+      keywords: "Shaik Arafath, AI Engineer, Machine Learning Engineer, Sikshanext, Co-Founder, Portfolio, B.Tech CSE"
     },
     about: {
       title: "About Shaik Arafath - AI/ML Engineer & Student Innovator",
-      description: "Learn about Shaik Arafath's journey as a B.Tech CSE student, Co-Founder of Bit Benders, and his passion for AI/ML solutions. From Khammam, Telangana to building innovative technology.",
-      keywords: "About Shaik Arafath, Biography, Education, Bit Benders Co-Founder, AI ML Student"
+      description: "Learn about Shaik Arafath's journey as a B.Tech CSE student, Co-Founder of Sikshanext, and his passion for AI/ML solutions. From Khammam, Telangana to building innovative technology.",
+      keywords: "About Shaik Arafath, Biography, Education, Sikshanext Co-Founder, AI ML Student"
     },
     projects: {
       title: "AI & ML Projects by Shaik Arafath - Portfolio Showcase",
-      description: "Explore innovative AI and Machine Learning projects by Shaik Arafath. From student tools to cutting-edge solutions, discover the technology behind Bit Benders.",
-      keywords: "AI Projects, Machine Learning Projects, Shaik Arafath Projects, Bit Benders, Student Tools, Innovation"
+      description: "Explore innovative AI and Machine Learning projects by Shaik Arafath. From student tools to cutting-edge solutions, discover the technology behind Sikshanext.",
+      keywords: "AI Projects, Machine Learning Projects, Shaik Arafath Projects, Sikshanext, Student Tools, Innovation"
     },
     contact: {
       title: "Contact Shaik Arafath - AI/ML Engineer & Co-Founder",
-      description: "Get in touch with Shaik Arafath for AI/ML projects, collaborations, or opportunities. Co-Founder of Bit Benders, available for innovative technology solutions.",
-      keywords: "Contact Shaik Arafath, AI ML Collaboration, Bit Benders Contact, Technology Partnerships"
+      description: "Get in touch with Shaik Arafath for AI/ML projects, collaborations, or opportunities. Co-Founder of Sikshanext, available for innovative technology solutions.",
+      keywords: "Contact Shaik Arafath, AI ML Collaboration, Sikshanext Contact, Technology Partnerships"
     }
   }
 };

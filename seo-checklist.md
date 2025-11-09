@@ -18,7 +18,7 @@
 
 ### 3. **Structured Data (JSON-LD)**
 - ✅ Person schema with complete profile
-- ✅ Organization schema for Bit Benders
+- ✅ Organization schema for SikshaNext
 - ✅ Educational background
 - ✅ Skills and expertise
 - ✅ Contact information
@@ -86,7 +86,7 @@
 - Shaik Arafath
 - AI Engineer
 - Machine Learning Engineer
-- Bit Benders Co-Founder
+- SikshaNext Co-Founder
 
 ### Secondary Keywords:
 - B.Tech CSE student
@@ -99,7 +99,7 @@
 ### Long-tail Keywords:
 - AI ML solutions Telangana
 - Computer science student portfolio
-- Bit Benders AI tools
+- Sikshanext AI tools
 - Student empowerment technology
 
 ## 📊 Expected SEO Benefits

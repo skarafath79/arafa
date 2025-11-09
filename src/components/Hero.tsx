@@ -131,7 +131,7 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             />
-            <span className="text-base font-inter text-foreground font-medium">AI & Machine Learning Engineer | Co-Founder at Bit Benders</span>
+            <span className="text-base font-inter text-foreground font-medium">AI & Machine Learning Engineer | Co-Founder at SikshaNext</span>
           </motion.div>
 
           {/* Sub-headline with staggered animation */}
@@ -141,7 +141,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            B.Tech CSE student and Co-Founder of Bit Benders, crafting intelligent AI/ML solutions. 
+            B.Tech CSE student and Co-Founder of Sikshanext, crafting intelligent AI/ML solutions. 
             <motion.span 
               className="block mt-2 text-foreground/80"
               initial={{ opacity: 0, y: 10 }}

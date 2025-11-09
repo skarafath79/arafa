@@ -19,7 +19,7 @@ const About = () => {
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
               <p className="text-lg text-muted-foreground font-inter leading-relaxed text-center max-w-4xl mx-auto">
                 A motivated and aspiring B.Tech CSE 3rd Year student with a strong academic foundation from Khammam, Telangana. 
-                Co-Founder & AI/ML Lead at Bit Benders, passionate about building AI-powered solutions that empower students. 
+                Co-Founder & AI/ML Lead at Sikshanext, passionate about building AI-powered solutions that empower students. 
                 Combining academic excellence with innovation, technology, and a drive to create meaningful impact.
               </p>
             </Card>
@@ -40,13 +40,13 @@ const About = () => {
                   <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
                     <div>
                       <h4 className="font-poppins font-bold text-2xl mb-2 text-primary">Co-Founder & AI/ML Lead</h4>
-                      <p className="text-xl font-semibold text-foreground mb-1">Bit Benders</p>
+                      <p className="text-xl font-semibold text-foreground mb-1">Sikshanext</p>
                       <p className="text-muted-foreground font-inter">B.Tech CSE 3rd Year | Student Innovator</p>
                     </div>
                   </div>
                   
                   <p className="text-muted-foreground font-inter leading-relaxed mb-6">
-                    As Co-Founder and AI/ML Lead at Bit Benders, I work on designing and developing AI-powered solutions 
+                    As Co-Founder and AI/ML Lead at Sikshanext, I work on designing and developing AI-powered solutions 
                     that support students in their learning and career growth.
                   </p>
 
@@ -58,7 +58,7 @@ const About = () => {
                     <div className="space-y-3 ml-7">
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                        <p className="font-inter text-foreground">Leading the AI/ML initiatives within Bit Benders</p>
+                        <p className="font-inter text-foreground">Leading the AI/ML initiatives within Sikshanext</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2" />
@@ -89,11 +89,11 @@ const About = () => {
                   <div className="mt-8 pt-6 border-t border-border/50">
                     <div className="flex items-center gap-3 mb-4">
                       <Globe className="w-5 h-5 text-primary" />
-                      <h5 className="font-poppins font-semibold text-lg">Connect with Bit Benders</h5>
+                      <h5 className="font-poppins font-semibold text-lg">Connect with Sikshanext</h5>
                     </div>
                     <div className="flex flex-wrap gap-3">
                       <a 
-                        href="https://bitbenders.xyz/" 
+                        href="https://sikshanext.in/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
@@ -102,7 +102,7 @@ const About = () => {
                         Website
                       </a>
                       <a 
-                        href="https://www.linkedin.com/company/bitbenders/" 
+                        href="https://www.linkedin.com/company/sikshanextpvtltd//" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
@@ -111,7 +111,7 @@ const About = () => {
                         LinkedIn
                       </a>
                       <a 
-                        href="https://www.instagram.com/bit_benders?igsh=MXAxYndyODZsam9xYw==" 
+                        href="https://www.instagram.com/siksha_next/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
@@ -120,7 +120,7 @@ const About = () => {
                         Instagram
                       </a>
                       <a 
-                        href="https://x.com/Bitbenders0" 
+                        href="https://x.com/sikshanext" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
@@ -138,7 +138,7 @@ const About = () => {
                         YouTube
                       </a>
                       <a 
-                        href="https://www.threads.com/@bit_benders" 
+                        href="https://www.threads.com/@siksha_next" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
