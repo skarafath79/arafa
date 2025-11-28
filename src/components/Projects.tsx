@@ -221,6 +221,81 @@ const Projects = () => {
                   </div>
                 </div>
               </Card>
+
+              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Database className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-poppins font-semibold text-lg">Heart Health Planner</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Your personalized health guide made with love. Get customized nutrition plans based on your unique profile.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Health Tech</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">AI</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://heart-health-planner.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Smartphone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-poppins font-semibold text-lg">The Safe Heart Protocol</h4>
+                    <p className="text-sm text-muted-foreground mb-2">A guide for parents and teens on navigating relationships safely in the modern world</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Web App</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Education</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://safe-heart-protocol.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Cpu className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-poppins font-semibold text-lg">Bharat AI One - My Book & Project</h4>
+                    <p className="text-sm text-muted-foreground mb-2">India Ultimate ChatBot - States & PM, Places & Food, Fruits & Colors, Current Time</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">AI ChatBot</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">India</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://bharat-ai-one.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
