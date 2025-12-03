@@ -1,16 +1,24 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, Code2, Sparkles, Zap, Cpu } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Star, Briefcase, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    setIsLoaded(true);
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -20,261 +28,379 @@ const Hero = () => {
     });
   };
 
-  // Tech icons for floating animation
-  const techIcons = [
-    { icon: <Code2 className="w-8 h-8 text-primary/30" />, delay: 0 },
-    { icon: <Sparkles className="w-8 h-8 text-accent/30" />, delay: 0.5 },
-    { icon: <Zap className="w-8 h-8 text-primary/30" />, delay: 1 },
-    { icon: <Cpu className="w-8 h-8 text-accent/30" />, delay: 1.5 }
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated tech icons floating in background */}
-      {techIcons.map((item, index) => (
-        <motion.div
-          key={index}
-          className="absolute pointer-events-none"
-          initial={{ y: 0, x: Math.random() * 100 - 50, opacity: 0 }}
-          animate={{
-            y: [0, -50, 0],
-            x: [0, Math.random() * 40 - 20, 0],
-            opacity: [0, 0.5, 0],
-          }}
-          transition={{
-            duration: 10 + Math.random() * 10,
-            delay: item.delay,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }}
-          style={{
-            left: `${10 + Math.random() * 80}%`,
-            top: `${10 + Math.random() * 80}%`,
-          }}
-        >
-          {item.icon}
-        </motion.div>
-      ))}
-
-      {/* Animated gradient background */}
-      <motion.div 
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background"
-        animate={{
-          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "linear"
-        }}
-      />
-      
-      {/* Animated mesh gradient */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 -left-4 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-        <div className="absolute top-0 -right-4 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Animated background particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full opacity-30"
+            initial={{ y: Math.random() * 100, x: Math.random() * 100 }}
+            animate={{
+              y: [Math.random() * 100, Math.random() * 100 - 100],
+              opacity: [0, 0.5, 0]
+            }}
+            transition={{
+              duration: 10 + Math.random() * 10,
+              repeat: Infinity,
+              delay: Math.random() * 5
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
+            }}
+          />
+        ))}
       </div>
 
-      {/* Grid pattern with parallax */}
-      <motion.div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"
-        style={{
-          backgroundPosition: `${scrollY * 0.1}px ${scrollY * 0.1}px`
+      
+      {/* Left 3D Robot */}
+      <motion.div
+        className="absolute top-1/2 left-20 transform -translate-y-1/2"
+        style={{ transformStyle: 'preserve-3d' }}
+        animate={{
+          rotateY: [0, 360],
+          x: mousePosition.x * 0.4,
+          y: mousePosition.y * 0.4
         }}
-      />
+        transition={{
+          rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
+          x: { type: "spring", stiffness: 100, damping: 10 },
+          y: { type: "spring", stiffness: 100, damping: 10 }
+        }}
+      >
+        {/* Robot head */}
+        <motion.div
+          className="w-24 h-24 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl border-2 border-cyan-400/50"
+          animate={{
+            boxShadow: ['0 0 20px rgba(6, 182, 212, 0.3)', '0 0 40px rgba(6, 182, 212, 0.6)', '0 0 20px rgba(6, 182, 212, 0.3)']
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity
+          }}
+        >
+          {/* Robot eyes */}
+          <div className="flex justify-center gap-4 pt-6">
+            <motion.div
+              className="w-4 h-4 bg-red-500 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity
+              }}
+            />
+            <motion.div
+              className="w-4 h-4 bg-red-500 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: 0.3
+              }}
+            />
+          </div>
+          
+          {/* Robot mouth */}
+          <motion.div
+            className="w-16 h-3 bg-black/80 mx-auto mt-4 rounded border border-cyan-400/30"
+            animate={{
+              background: ['rgba(0,0,0,0.8)', 'rgba(6, 182, 212, 0.2)', 'rgba(0,0,0,0.8)']
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity
+            }}
+          />
+        </motion.div>
+        
+        {/* Robot antenna */}
+        <motion.div
+          className="w-1 h-6 bg-gradient-to-t from-gray-600 to-cyan-400 -top-6 left-1/2 transform -translate-x-1/2"
+          animate={{
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <motion.div
+            className="w-2 h-2 bg-cyan-400 rounded-full -top-1 -left-0.5 absolute"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.8, 1, 0.8]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity
+            }}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Right 3D Robot */}
+      <motion.div
+        className="absolute top-1/2 right-20 transform -translate-y-1/2"
+        style={{ transformStyle: 'preserve-3d' }}
+        animate={{
+          rotateY: [0, -360],
+          x: mousePosition.x * 0.4,
+          y: mousePosition.y * 0.4
+        }}
+        transition={{
+          rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
+          x: { type: "spring", stiffness: 100, damping: 10 },
+          y: { type: "spring", stiffness: 100, damping: 10 }
+        }}
+      >
+        {/* Robot head */}
+        <motion.div
+          className="w-24 h-24 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl border-2 border-cyan-400/50"
+          animate={{
+            boxShadow: ['0 0 20px rgba(6, 182, 212, 0.3)', '0 0 40px rgba(6, 182, 212, 0.6)', '0 0 20px rgba(6, 182, 212, 0.3)']
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity
+          }}
+        >
+          {/* Robot eyes */}
+          <div className="flex justify-center gap-4 pt-6">
+            <motion.div
+              className="w-4 h-4 bg-red-500 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity
+              }}
+            />
+            <motion.div
+              className="w-4 h-4 bg-red-500 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: 0.3
+              }}
+            />
+          </div>
+          
+          {/* Robot mouth */}
+          <motion.div
+            className="w-16 h-3 bg-black/80 mx-auto mt-4 rounded border border-cyan-400/30"
+            animate={{
+              background: ['rgba(0,0,0,0.8)', 'rgba(6, 182, 212, 0.2)', 'rgba(0,0,0,0.8)']
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity
+            }}
+          />
+        </motion.div>
+        
+        {/* Robot antenna */}
+        <motion.div
+          className="w-1 h-6 bg-gradient-to-t from-gray-600 to-cyan-400 -top-6 left-1/2 transform -translate-x-1/2"
+          animate={{
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <motion.div
+            className="w-2 h-2 bg-cyan-400 rounded-full -top-1 -left-0.5 absolute"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.8, 1, 0.8]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity
+            }}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          className="max-w-5xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Main headline with gradient and hover effect */}
-          <motion.h1 
-            className="text-6xl sm:text-7xl lg:text-8xl font-poppins font-black mb-8 leading-tight"
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-            animate={{
-              textShadow: isHovered 
-                ? '0 0 10px rgba(168, 85, 247, 0.5), 0 0 20px rgba(56, 189, 248, 0.3)'
-                : 'none'
-            }}
-            transition={{ duration: 0.3 }}
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Main Profile Image */}
+          <motion.div 
+            className="relative mb-8 inline-block"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+            {/* Spotlight effect */}
+            <div className="absolute inset-0 rounded-full spotlight-overlay" />
+            
+            {/* Image container with glow */}
+            <div className="relative image-container">
+              <motion.img
+                src="/profile.png"
+                alt="Shaik Arafath"
+                className="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover border-4 border-white/20 animated-border"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Name with typewriter effect */}
+          <motion.h1 
+            className="text-5xl sm:text-6xl lg:text-7xl font-poppins font-black mb-4 text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <span className="typewriter inline-block">
               Shaik Arafath
             </span>
           </motion.h1>
 
-          {/* Badge with subtle animation */}
+          {/* Role description */}
           <motion.div 
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-primary/30 mb-8 backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.3)]"
-            whileHover={{ 
-              scale: 1.03,
-              boxShadow: '0 0 40px rgba(168, 85, 247, 0.4)'
-            }}
-            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          >
-            <motion.div 
-              className="w-2 h-2 bg-primary rounded-full"
-              animate={{ 
-                scale: [1, 1.3, 1],
-                opacity: [0.8, 1, 0.8]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }}
-            />
-            <span className="text-base font-inter text-foreground font-medium">AI & Machine Learning Engineer | Co-Founder at SikshaNext</span>
-          </motion.div>
-
-          {/* Sub-headline with staggered animation */}
-          <motion.h2 
-            className="text-xl sm:text-2xl text-muted-foreground font-inter max-w-3xl mx-auto mb-12 leading-relaxed font-normal"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            B.Tech CSE student and Co-Founder of Sikshanext, crafting intelligent AI/ML solutions. 
-            <motion.span 
-              className="block mt-2 text-foreground/80"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              Empowering students through innovative technology from Khammam, Telangana.
-            </motion.span>
-          </motion.h2>
-
-          {/* Social Links - Prominent */}
-          <motion.div 
-            className="flex flex-wrap gap-4 justify-center items-center mb-12"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 float-animation"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <motion.a 
+            <Briefcase className="w-4 h-4 text-purple-300" />
+            <span className="text-white/90 font-medium">AI & Machine Learning Engineer</span>
+          </motion.div>
+
+          <motion.div 
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 float-animation"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
+            <Award className="w-4 h-4 text-blue-300" />
+            <span className="text-white/90 font-medium">Co-Founder at SikshaNext</span>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p 
+            className="text-lg text-white/80 max-w-2xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+          >
+            Passionate about building innovative AI/ML solutions and empowering students through technology.
+          </motion.p>
+
+          {/* Social Links */}
+          <motion.div 
+            className="flex gap-4 justify-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+          >
+            <motion.a
               href="mailto:skarafath79@gmail.com"
-              className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
-              aria-label="Send email to Shaik Arafath"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Mail className="w-5 h-5 text-primary" aria-hidden="true" />
-              <span className="font-inter font-medium">skarafath79@gmail.com</span>
+              <Mail className="w-5 h-5" />
             </motion.a>
-            <motion.a 
+            <motion.a
               href="https://github.com/skarafath79"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
-              aria-label="Visit Shaik Arafath's GitHub profile"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Github className="w-5 h-5 text-primary" aria-hidden="true" />
-              <span className="font-inter font-medium">GitHub</span>
+              <Github className="w-5 h-5" />
             </motion.a>
-            <motion.a 
+            <motion.a
               href="https://www.linkedin.com/in/shaik-arafath-5b0124354"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-4 bg-card border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
-              aria-label="Visit Shaik Arafath's LinkedIn profile"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Linkedin className="w-5 h-5 text-primary" aria-hidden="true" />
-              <span className="font-inter font-medium">LinkedIn</span>
+              <Linkedin className="w-5 h-5" />
             </motion.a>
           </motion.div>
 
-          {/* CTA Buttons with enhanced hover effects */}
+          {/* CTA Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex gap-4 justify-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
           >
-            <motion.div
+            <motion.button
+              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('projects')}
             >
-              <Button 
-                size="lg" 
-                className="group relative overflow-hidden font-poppins font-bold text-base px-10 py-7 bg-gradient-to-r from-primary to-accent hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 text-primary-foreground"
-                onClick={() => scrollToSection('projects')}
-              >
-                <span className="relative z-10 flex items-center">
-                  View My Work
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </Button>
-            </motion.div>
-            
-            <motion.div
+              View Projects
+              <ArrowRight className="inline ml-2 w-4 h-4" />
+            </motion.button>
+            <motion.button
+              className="px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-colors"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('contact')}
             >
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="group relative overflow-hidden font-poppins font-bold text-base px-10 py-7 border-2 border-primary/50 bg-card/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all duration-300"
-                onClick={() => scrollToSection('contact')}
-              >
-                <span className="relative z-10">Get In Touch</span>
-                <span className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </Button>
-            </motion.div>
+              Contact Me
+            </motion.button>
           </motion.div>
 
-          {/* Emergency contact badge */}
-          <motion.a
-            href="tel:+919063059586"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium text-sm hover:bg-primary/20 transition-colors cursor-pointer"
-            animate={{ 
-              boxShadow: ['0 0 0 0 rgba(168, 85, 247, 0.7)', '0 0 0 10px rgba(168, 85, 247, 0)'],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <motion.div 
-              className="w-2 h-2 bg-primary rounded-full"
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-            <span>📞 Contact: +91 9063059586</span>
-          </motion.a>
-
-          {/* Scroll indicator */}
+          {/* Contact info - More Visible */}
           <motion.div 
-            className="mt-16"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ 
-              opacity: [0, 1, 1, 0],
-              y: [10, 0, 0, -10]
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity,
-              repeatDelay: 1
-            }}
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 max-w-md mx-auto mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.7 }}
           >
-            <div className="scroll-indicator"></div>
-            <p className="text-xs text-muted-foreground mt-4">Scroll to explore</p>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3 text-white">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/60">Email</p>
+                  <p className="font-semibold">skarafath79@gmail.com</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-white">
+                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <span className="text-lg">📱</span>
+                </div>
+                <div>
+                  <p className="text-xs text-white/60">Mobile</p>
+                  <p className="font-semibold">+91 9063059586</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
