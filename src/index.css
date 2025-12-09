@@ -99,16 +99,37 @@ All colors MUST be HSL.
 
 /* Custom Animations */
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(20px, -50px) scale(1.1); }
-  50% { transform: translate(-20px, 20px) scale(0.9); }
-  75% { transform: translate(50px, 50px) scale(1.05); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(20px, -50px) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  75% {
+    transform: translate(50px, 50px) scale(1.05);
+  }
 }
 
 .animate-gradient {
@@ -157,8 +178,201 @@ All colors MUST be HSL.
     transform: translate(-50%, 0);
     opacity: 1;
   }
+
   100% {
     transform: translate(-50%, 20px);
     opacity: 0;
   }
+}
+
+/* HYPE PRELOADER ANIMATIONS */
+@keyframes glitch {
+  0% {
+    transform: translate(0)
+  }
+
+  20% {
+    transform: translate(-2px, 2px)
+  }
+
+  40% {
+    transform: translate(-2px, -2px)
+  }
+
+  60% {
+    transform: translate(2px, 2px)
+  }
+
+  80% {
+    transform: translate(2px, -2px)
+  }
+
+  100% {
+    transform: translate(0)
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes holographic-flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 0.8;
+  }
+
+  66% {
+    opacity: 0.9;
+  }
+
+  77% {
+    opacity: 0.2;
+  }
+
+  78% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes cyber-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px #06b6d4, 0 0 20px #06b6d4;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #06b6d4, 0 0 40px #06b6d4, 0 0 10px #ffffff;
+  }
+}
+
+@keyframes cinematic-fade-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.animate-scanline {
+  animation: scanline 2s linear infinite;
+}
+
+.animate-hologram {
+  animation: holographic-flicker 2s infinite alternate;
+}
+
+.animate-text-shimmer {
+  background: linear-gradient(to right, #ffffff00 0%, #ffffff 50%, #ffffff00 100%);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: text-shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(100%)
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s infinite;
+}
+
+/* 3D Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+.translate-z-40 {
+  transform: translateZ(40px);
+}
+
+.translate-z-50 {
+  transform: translateZ(50px);
+}
+
+.translate-z-60 {
+  transform: translateZ(60px);
+}
+
+.translate-z-70 {
+  transform: translateZ(70px);
+}
+
+/* Gradient Animations */
+@keyframes gradient-x {
+
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-gradient-slow {
+  animation: gradient-x 8s ease infinite;
 }

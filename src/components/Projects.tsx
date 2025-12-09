@@ -1,4 +1,5 @@
-import { Card } from "@/components/ui/card";
+
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Wrench, Database, Smartphone, Cpu } from "lucide-react";
@@ -20,12 +21,12 @@ const Projects = () => {
           </div>
 
           {/* Featured Project Card */}
-          <Card className="overflow-hidden bg-card/50 sm:backdrop-blur-sm border-border/50 sm:hover:border-primary/30 transition-all duration-300 sm:hover:shadow-2xl sm:hover:shadow-primary/20 sm:animate-fade-in-up group">
+          <SpotlightCard className="overflow-hidden bg-card/50 sm:backdrop-blur-sm border-border/50 transition-all duration-300 sm:animate-fade-in-up group">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left side - Visual */}
               <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/20 p-12 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-50" />
-                
+
                 {/* Project icon/illustration */}
                 <div className="relative z-10 text-center">
                   <div className="w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border-2 border-primary/30 flex items-center justify-center sm:animate-float">
@@ -51,10 +52,10 @@ const Projects = () => {
                 </h3>
 
                 <p className="text-muted-foreground font-inter mb-6 leading-relaxed">
-                  An innovative AI-powered project currently in development. Vanar Rakshak aims to 
-                  provide a modern solution for human-wildlife conflict management. This project 
-                  leverages a custom-trained Machine Learning model using Python and TensorFlow to 
-                  detect and safely deter monkeys from agricultural areas, protecting crops while 
+                  An innovative AI-powered project currently in development. Vanar Rakshak aims to
+                  provide a modern solution for human-wildlife conflict management. This project
+                  leverages a custom-trained Machine Learning model using Python and TensorFlow to
+                  detect and safely deter monkeys from agricultural areas, protecting crops while
                   ensuring animal welfare.
                 </p>
 
@@ -65,9 +66,9 @@ const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {["Python", "TensorFlow", "OpenCV", "Machine Learning", "Computer Vision"].map((tech) => (
-                      <Badge 
+                      <Badge
                         key={tech}
-                        variant="outline" 
+                        variant="outline"
                         className="bg-primary/5 border-primary/20 hover:bg-primary/10 font-inter"
                       >
                         {tech}
@@ -105,14 +106,14 @@ const Projects = () => {
 
                 {/* Action buttons */}
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <Button 
+                  <Button
                     variant="default"
                     className="bg-primary sm:hover:bg-primary/90 font-inter"
                   >
                     <Github className="w-4 h-4 mr-2" />
                     View on GitHub
                   </Button>
-                  <Button 
+                  <Button
                     variant="outline"
                     className="border-primary/30 sm:hover:bg-primary/10 font-inter"
                     disabled
@@ -123,14 +124,14 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </Card>
+          </SpotlightCard>
 
           {/* Group Projects & Contributions */}
           <div className="mt-12">
             <h3 className="text-2xl font-poppins font-bold mb-6">Group Projects & Contributions</h3>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Smartphone className="w-6 h-6 text-primary" />
@@ -145,9 +146,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Cpu className="w-6 h-6 text-primary" />
@@ -162,9 +163,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Database className="w-6 h-6 text-primary" />
@@ -179,7 +180,7 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
             </div>
           </div>
 
@@ -188,7 +189,7 @@ const Projects = () => {
             <h3 className="text-2xl font-poppins font-bold mb-6">Personal & Featured Projects</h3>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Cpu className="w-6 h-6 text-primary" />
@@ -203,9 +204,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Cpu className="w-6 h-6 text-primary" />
@@ -220,9 +221,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Database className="w-6 h-6 text-primary" />
@@ -245,9 +246,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Smartphone className="w-6 h-6 text-primary" />
@@ -270,9 +271,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Cpu className="w-6 h-6 text-primary" />
@@ -295,9 +296,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Database className="w-6 h-6 text-primary" />
@@ -320,9 +321,9 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                     <Smartphone className="w-6 h-6 text-primary" />
@@ -345,7 +346,7 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
             </div>
           </div>
         </div>

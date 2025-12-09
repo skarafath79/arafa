@@ -1,405 +1,207 @@
+
+import React, { useRef, useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, Star, Briefcase, Award } from "lucide-react";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { ArrowRight, Github, Linkedin, Mail, Cpu, Globe, Terminal } from "lucide-react";
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20
-      });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -10; // Invert logic for natural feel
+    const rotateY = ((x - centerX) / centerX) * 10;
+
+    setRotation({ x: rotateX, y: rotateY });
+    setMousePos({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setRotation({ x: 0, y: 0 });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Animated background particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full opacity-30"
-            initial={{ y: Math.random() * 100, x: Math.random() * 100 }}
-            animate={{
-              y: [Math.random() * 100, Math.random() * 100 - 100],
-              opacity: [0, 0.5, 0]
-            }}
-            transition={{
-              duration: 10 + Math.random() * 10,
-              repeat: Infinity,
-              delay: Math.random() * 5
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-          />
-        ))}
+    <section
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}    >
+
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 bg-background overflow-hidden -z-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+        {/* Grid lines similar to preloader but subtler */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]"></div>
       </div>
 
-      
-      {/* Left 3D Robot */}
-      <motion.div
-        className="absolute top-1/2 left-20 transform -translate-y-1/2"
-        style={{ transformStyle: 'preserve-3d' }}
-        animate={{
-          rotateY: [0, 360],
-          x: mousePosition.x * 0.4,
-          y: mousePosition.y * 0.4
-        }}
-        transition={{
-          rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
-          x: { type: "spring", stiffness: 100, damping: 10 },
-          y: { type: "spring", stiffness: 100, damping: 10 }
-        }}
+      <div
+        ref={containerRef}
+        className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 perspective-1000"
+        style={{ perspective: '1000px' }}
       >
-        {/* Robot head */}
-        <motion.div
-          className="w-24 h-24 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl border-2 border-cyan-400/50"
-          animate={{
-            boxShadow: ['0 0 20px rgba(6, 182, 212, 0.3)', '0 0 40px rgba(6, 182, 212, 0.6)', '0 0 20px rgba(6, 182, 212, 0.3)']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity
+        <div
+          className="relative transition-transform duration-200 ease-out transform-style-3d"
+          style={{
+            transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
           }}
         >
-          {/* Robot eyes */}
-          <div className="flex justify-center gap-4 pt-6">
-            <motion.div
-              className="w-4 h-4 bg-red-500 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity
+          {/* Main Content Floating Card */}
+          <div className="bg-card/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 lg:p-16 shadow-[0_0_50px_rgba(0,0,0,0.5)] transform-style-3d relative group overflow-hidden">
+
+            {/* SPOTLIGHT GLOW EFFECT */}
+            <div
+              className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100 z-10"
+              style={{
+                background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.06), transparent 40%)`
               }}
             />
-            <motion.div
-              className="w-4 h-4 bg-red-500 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: 0.3
-              }}
-            />
-          </div>
-          
-          {/* Robot mouth */}
-          <motion.div
-            className="w-16 h-3 bg-black/80 mx-auto mt-4 rounded border border-cyan-400/30"
-            animate={{
-              background: ['rgba(0,0,0,0.8)', 'rgba(6, 182, 212, 0.2)', 'rgba(0,0,0,0.8)']
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity
-            }}
-          />
-        </motion.div>
-        
-        {/* Robot antenna */}
-        <motion.div
-          className="w-1 h-6 bg-gradient-to-t from-gray-600 to-cyan-400 -top-6 left-1/2 transform -translate-x-1/2"
-          animate={{
-            rotate: [0, 10, -10, 0]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <motion.div
-            className="w-2 h-2 bg-cyan-400 rounded-full -top-1 -left-0.5 absolute"
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.8, 1, 0.8]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity
-            }}
-          />
-        </motion.div>
-      </motion.div>
-
-      {/* Right 3D Robot */}
-      <motion.div
-        className="absolute top-1/2 right-20 transform -translate-y-1/2"
-        style={{ transformStyle: 'preserve-3d' }}
-        animate={{
-          rotateY: [0, -360],
-          x: mousePosition.x * 0.4,
-          y: mousePosition.y * 0.4
-        }}
-        transition={{
-          rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
-          x: { type: "spring", stiffness: 100, damping: 10 },
-          y: { type: "spring", stiffness: 100, damping: 10 }
-        }}
-      >
-        {/* Robot head */}
-        <motion.div
-          className="w-24 h-24 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl border-2 border-cyan-400/50"
-          animate={{
-            boxShadow: ['0 0 20px rgba(6, 182, 212, 0.3)', '0 0 40px rgba(6, 182, 212, 0.6)', '0 0 20px rgba(6, 182, 212, 0.3)']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity
-          }}
-        >
-          {/* Robot eyes */}
-          <div className="flex justify-center gap-4 pt-6">
-            <motion.div
-              className="w-4 h-4 bg-red-500 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity
+            {/* Intense border spotlight */}
+            <div
+              className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100 z-10"
+              style={{
+                background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(14, 165, 233, 0.15), transparent 40%)`,
+                maskImage: 'linear-gradient(black, black) content-box, linear-gradient(black, black)',
+                maskComposite: 'exclude',
+                WebkitMaskComposite: 'xor',
+                padding: '1px',
+                borderRadius: 'inherit'
               }}
             />
-            <motion.div
-              className="w-4 h-4 bg-red-500 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                boxShadow: ['0 0 10px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 1)', '0 0 10px rgba(239, 68, 68, 0.8)']
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: 0.3
-              }}
-            />
-          </div>
-          
-          {/* Robot mouth */}
-          <motion.div
-            className="w-16 h-3 bg-black/80 mx-auto mt-4 rounded border border-cyan-400/30"
-            animate={{
-              background: ['rgba(0,0,0,0.8)', 'rgba(6, 182, 212, 0.2)', 'rgba(0,0,0,0.8)']
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity
-            }}
-          />
-        </motion.div>
-        
-        {/* Robot antenna */}
-        <motion.div
-          className="w-1 h-6 bg-gradient-to-t from-gray-600 to-cyan-400 -top-6 left-1/2 transform -translate-x-1/2"
-          animate={{
-            rotate: [0, 10, -10, 0]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <motion.div
-            className="w-2 h-2 bg-cyan-400 rounded-full -top-1 -left-0.5 absolute"
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.8, 1, 0.8]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity
-            }}
-          />
-        </motion.div>
-      </motion.div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            {/* Holographic Border Effect (Base) */}
+            <div className="absolute inset-0 rounded-3xl opacity-20 pointer-events-none bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* Main Profile Image */}
-          <motion.div 
-            className="relative mb-8 inline-block"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            {/* Spotlight effect */}
-            <div className="absolute inset-0 rounded-full spotlight-overlay" />
-            
-            {/* Image container with glow */}
-            <div className="relative image-container">
-              <motion.img
-                src="/profile.png"
-                alt="Shaik Arafath"
-                className="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover border-4 border-white/20 animated-border"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-            </div>
-          </motion.div>
+            <div className="grid lg:grid-cols-2 gap-12 items-center transform-style-3d relative z-20">
 
-          {/* Name with typewriter effect */}
-          <motion.h1 
-            className="text-5xl sm:text-6xl lg:text-7xl font-poppins font-black mb-4 text-white"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <span className="typewriter inline-block">
-              Shaik Arafath
-            </span>
-          </motion.h1>
+              {/* Text Content */}
+              <div className="space-y-8 transform translate-z-20">
+                <div className="space-y-4">
+                  <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md transform translate-z-30 shadow-lg relative group/badge overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/badge:translate-x-[100%] transition-transform duration-1000"></div>
+                    <span className="text-primary font-mono text-sm tracking-widest uppercase flex items-center gap-2 relative z-10">
+                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                      System Online
+                    </span>
+                  </div>
 
-          {/* Role description */}
-          <motion.div 
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 float-animation"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            <Briefcase className="w-4 h-4 text-purple-300" />
-            <span className="text-white/90 font-medium">AI & Machine Learning Engineer</span>
-          </motion.div>
+                  <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white transform translate-z-40 drop-shadow-xl relative">
+                    Hi, I'm <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient-x">
+                      Shaik Arafath
+                    </span>
+                  </h1>
 
-          <motion.div 
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 float-animation"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <Award className="w-4 h-4 text-blue-300" />
-            <span className="text-white/90 font-medium">Co-Founder at SikshaNext</span>
-          </motion.div>
+                  <div className="text-xl md:text-2xl text-muted-foreground font-light transform translate-z-30 h-10">
+                    <span className="text-cyan-400 font-mono">&lt;AI Engineer /&gt;</span> & <span className="text-purple-400 font-mono">&lt;Co-Founder /&gt;</span>
+                  </div>
 
-          {/* Description */}
-          <motion.p 
-            className="text-lg text-white/80 max-w-2xl mx-auto mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-          >
-            Passionate about building innovative AI/ML solutions and empowering students through technology.
-          </motion.p>
-
-          {/* Social Links */}
-          <motion.div 
-            className="flex gap-4 justify-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
-          >
-            <motion.a
-              href="mailto:skarafath79@gmail.com"
-              className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Mail className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href="https://github.com/skarafath79"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Github className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/shaik-arafath-5b0124354"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Linkedin className="w-5 h-5" />
-            </motion.a>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div 
-            className="flex gap-4 justify-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-          >
-            <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('projects')}
-            >
-              View Projects
-              <ArrowRight className="inline ml-2 w-4 h-4" />
-            </motion.button>
-            <motion.button
-              className="px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('contact')}
-            >
-              Contact Me
-            </motion.button>
-          </motion.div>
-
-          {/* Contact info - More Visible */}
-          <motion.div 
-            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 max-w-md mx-auto mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.7 }}
-          >
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 text-white">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-                  <Mail className="w-5 h-5" />
+                  <p className="text-lg text-muted-foreground/80 max-w-xl leading-relaxed transform translate-z-20 border-l-2 border-primary/30 pl-4">
+                    Architecting intelligent solutions at the intersection of AI and Web Technologies.
+                    Building <span className="text-white font-medium">SikshaNext</span> to empower the next generation of learners.
+                  </p>
                 </div>
-                <div>
-                  <p className="text-xs text-white/60">Email</p>
-                  <p className="font-semibold">skarafath79@gmail.com</p>
+
+                <div className="flex flex-wrap gap-4 transform translate-z-50 pt-4">
+                  <Button
+                    size="lg"
+                    className="relative overflow-hidden bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_rgba(124,58,237,0.5)] transform hover:scale-105 hover:translate-z-10 transition-all duration-300 rounded-xl group/btn"
+                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                    <span className="relative flex items-center">View Projects <ArrowRight className="ml-2 w-4 h-4" /></span>
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="relative overflow-hidden backdrop-blur-md bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.1)] transform hover:scale-105 hover:translate-z-10 transition-all duration-300 rounded-xl group/btn"
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+                    <span className="relative">Contact Me</span>
+                  </Button>
+                </div>
+
+                <div className="flex gap-6 transform translate-z-40 pt-8 border-t border-white/5">
+                  {[
+                    { icon: Github, href: "https://github.com/skarafath79" },
+                    { icon: Linkedin, href: "https://www.linkedin.com/in/shaik-arafath-5b0124354" },
+                    { icon: Globe, href: "https://sikshanext.in" },
+                    { icon: Mail, href: "mailto:skarafath79@gmail.com" }
+                  ].map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-white transition-colors transform hover:translate-y-[-5px] hover:scale-110 duration-300"
+                    >
+                      <social.icon className="w-6 h-6" />
+                    </a>
+                  ))}
                 </div>
               </div>
-              <div className="flex items-center gap-3 text-white">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                  <span className="text-lg">📱</span>
-                </div>
-                <div>
-                  <p className="text-xs text-white/60">Mobile</p>
-                  <p className="font-semibold">+91 9063059586</p>
+
+              {/* 3D Visual Element / Avatar Area */}
+              <div className="relative transform-style-3d group-hover:scale-105 transition-transform duration-500 block mt-12 lg:mt-0">
+                {/* Floating Elements Background */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -z-10 animate-pulse transform translate-z-[-20px]"></div>
+
+                {/* Main 3D Card for Image/Graphic */}
+                <div className="relative w-full aspect-square max-w-md mx-auto transform-style-3d">
+                  {/* Rotating Rings */}
+                  <div className="absolute inset-0 border border-white/10 rounded-full animate-[spin_10s_linear_infinite] transform translate-z-10"></div>
+                  <div className="absolute inset-4 border border-dashed border-primary/30 rounded-full animate-[spin_20s_linear_infinite_reverse] transform translate-z-20"></div>
+                  <div className="absolute inset-12 border border-dotted border-cyan-500/30 rounded-full animate-[spin_15s_linear_infinite] transform translate-z-30"></div>
+
+                  {/* Central 3D Object (Profile or Icon) */}
+                  <div className="absolute inset-20 bg-gradient-to-br from-gray-900 to-black rounded-full border border-white/10 shadow-2xl flex items-center justify-center transform translate-z-50 overflow-hidden">
+                    <img
+                      src="/profile.png"
+                      alt="Shaik Arafath"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                      onError={(e) => {
+                        // If image fails, show 3D icon
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement?.classList.add('flex-col');
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <Cpu className="w-16 h-16 text-cyan-400 absolute bottom-1/4 animate-bounce hidden peer-empty:block" />
+                  </div>
+
+                  {/* Floating Tech Cards */}
+                  <div className="absolute -top-4 -right-4 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 transform translate-z-60 animate-float shadow-xl">
+                    <Terminal className="w-6 h-6 text-green-400 mb-2" />
+                    <div className="h-1 w-12 bg-green-400/50 rounded-full"></div>
+                    <div className="h-1 w-8 bg-green-400/30 rounded-full mt-1"></div>
+                  </div>
+
+                  <div className="absolute bottom-8 -left-8 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 transform translate-z-70 animate-float delay-1000 shadow-xl">
+                    <Globe className="w-6 h-6 text-blue-400 mb-2" />
+                    <div className="text-xs font-mono text-blue-200">World Wide</div>
+                  </div>
                 </div>
               </div>
+
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

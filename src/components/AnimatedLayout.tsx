@@ -40,7 +40,7 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
     <div className="relative min-h-screen overflow-hidden">
       {/* Particle Background (desktop only) */}
       {showDecor && <ParticleBackground />}
-      
+
       {/* Animated Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
       >
         {children}
       </motion.div>
-      
+
       {/* Glow Effects (desktop only) */}
       {showDecor && (
         <div className="fixed inset-0 pointer-events-none">
