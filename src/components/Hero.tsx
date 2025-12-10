@@ -1,7 +1,9 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, Cpu, Globe, Terminal } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Cpu, Globe, Terminal, Phone, Download } from "lucide-react";
+
+
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -136,6 +138,17 @@ const Hero = () => {
                     <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
                     <span className="relative">Contact Me</span>
                   </Button>
+
+                  <a href="/ARAFATH cv.pdf" download="Shaik_Arafath_CV.pdf">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="relative overflow-hidden backdrop-blur-md bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 text-white shadow-[0_0_20px_rgba(6,182,212,0.1)] transform hover:scale-105 hover:translate-z-10 transition-all duration-300 rounded-xl group/btn"
+                    >
+                      <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent animate-shimmer"></div>
+                      <span className="relative flex items-center">Download CV <Download className="ml-2 w-4 h-4" /></span>
+                    </Button>
+                  </a>
                 </div>
 
                 <div className="flex gap-6 transform translate-z-40 pt-8 border-t border-white/5">
@@ -143,7 +156,8 @@ const Hero = () => {
                     { icon: Github, href: "https://github.com/skarafath79" },
                     { icon: Linkedin, href: "https://www.linkedin.com/in/shaik-arafath-5b0124354" },
                     { icon: Globe, href: "https://sikshanext.in" },
-                    { icon: Mail, href: "mailto:skarafath79@gmail.com" }
+                    { icon: Mail, href: "mailto:skarafath79@gmail.com" },
+                    { icon: Phone, href: "tel:9063059586" }
                   ].map((social, index) => (
                     <a
                       key={index}
@@ -186,16 +200,35 @@ const Hero = () => {
                     <Cpu className="w-16 h-16 text-cyan-400 absolute bottom-1/4 animate-bounce hidden peer-empty:block" />
                   </div>
 
-                  {/* Floating Tech Cards */}
-                  <div className="absolute -top-4 -right-4 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 transform translate-z-60 animate-float shadow-xl">
-                    <Terminal className="w-6 h-6 text-green-400 mb-2" />
-                    <div className="h-1 w-12 bg-green-400/50 rounded-full"></div>
-                    <div className="h-1 w-8 bg-green-400/30 rounded-full mt-1"></div>
-                  </div>
+                  {/* Orbiting Elements Container */}
+                  <div className="absolute inset-0 pointer-events-none animate-[spin_20s_linear_infinite]">
+                    {/* Element 1: Tech/Terminal (Top) - Positioned at 0 degrees */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-16 w-24 h-24 transform animate-[spin_20s_linear_infinite_reverse] cursor-pointer pointer-events-auto hover:scale-110 transition-transform z-50">
+                      <div className="w-full h-full bg-black/60 backdrop-blur-md rounded-2xl border border-white/10 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(74,222,128,0.3)] group hover:border-green-400/50 transition-colors">
+                        <Terminal className="w-8 h-8 text-green-400 mb-2 group-hover:animate-pulse" />
+                        <div className="h-1 w-12 bg-green-400/50 rounded-full"></div>
+                      </div>
+                    </div>
 
-                  <div className="absolute bottom-8 -left-8 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 transform translate-z-70 animate-float delay-1000 shadow-xl">
-                    <Globe className="w-6 h-6 text-blue-400 mb-2" />
-                    <div className="text-xs font-mono text-blue-200">World Wide</div>
+                    {/* Element 2: Robot (Bottom Right) - Positioned at 120 degrees */}
+                    <div className="absolute bottom-4 -right-8 w-32 h-32 md:w-40 md:h-40 transform animate-[spin_20s_linear_infinite_reverse] cursor-pointer pointer-events-auto hover:scale-110 transition-transform origin-center z-50">
+                      <div className="relative w-full h-full group/robot">
+                        <div className="absolute inset-0 bg-cyan-500/10 rounded-2xl blur-md"></div>
+                        <img
+                          src="/robot-hero.png"
+                          alt="AI Assistant"
+                          className="w-full h-full object-contain rounded-2xl drop-shadow-[0_0_20px_rgba(6,182,212,0.5)]"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Element 3: Globe (Bottom Left) - Positioned at 240 degrees */}
+                    <div className="absolute bottom-4 -left-8 w-24 h-24 transform animate-[spin_20s_linear_infinite_reverse] cursor-pointer pointer-events-auto hover:scale-110 transition-transform origin-center z-50">
+                      <div className="w-full h-full bg-black/60 backdrop-blur-md rounded-2xl border border-white/10 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.3)] group hover:border-blue-400/50 transition-colors">
+                        <Globe className="w-8 h-8 text-blue-400 mb-2 group-hover:animate-spin-slow" />
+                        <span className="text-[10px] font-mono text-blue-200">World Wide</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

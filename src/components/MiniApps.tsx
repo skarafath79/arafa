@@ -8,9 +8,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 const SectionTitle = ({ title, subtitle }: { title: string; subtitle?: string }) => (
   <div className="mb-6">
-    <h3 className="font-poppins text-2xl font-bold">{title}</h3>
+    <h3 className=" text-2xl font-bold">{title}</h3>
     {subtitle ? (
-      <p className="text-sm text-muted-foreground mt-1 font-inter">{subtitle}</p>
+      <p className="text-sm text-muted-foreground mt-1 ">{subtitle}</p>
     ) : null}
   </div>
 );
@@ -130,9 +130,9 @@ const MiniApps = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">Mini Apps</h2>
+            <h2 className="text-4xl sm:text-5xl  font-bold mb-4">Mini Apps</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
+            <p className="text-muted-foreground  max-w-2xl mx-auto">
               A collection of small interactive utilities implemented with React.
             </p>
           </div>

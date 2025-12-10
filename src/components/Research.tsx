@@ -8,8 +8,8 @@ const Research = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-poppins font-bold">Research & Publications</h2>
-            <p className="text-muted-foreground font-inter mt-2">Contributing to the advancement of technology and sustainable solutions</p>
+            <h2 className="text-3xl  font-bold">Research & Publications</h2>
+            <p className="text-muted-foreground  mt-2">Contributing to the advancement of technology and sustainable solutions</p>
           </div>
 
           <Card className="p-6 bg-card/50 sm:backdrop-blur-sm border-border/50">
@@ -18,7 +18,7 @@ const Research = () => {
                 <FileText className="w-6 h-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="font-poppins font-semibold text-xl">Automatic e-waste sorting with computer vision</h3>
+                <h3 className=" font-semibold text-xl">Automatic e-waste sorting with computer vision</h3>
                 <p className="text-sm text-muted-foreground mt-2 mb-4">Developing innovative computer vision solutions for automated electronic waste classification and sorting to promote sustainable recycling practices.</p>
 
                 <div className="flex items-center gap-3">

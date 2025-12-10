@@ -11,11 +11,11 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16 sm:animate-fade-in">
-            <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl  font-bold mb-4">
               Featured Project
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
+            <p className="text-muted-foreground  max-w-2xl mx-auto">
               Innovative solutions powered by AI and Machine Learning
             </p>
           </div>
@@ -32,7 +32,7 @@ const Projects = () => {
                   <div className="w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border-2 border-primary/30 flex items-center justify-center sm:animate-float">
                     <Wrench className="w-16 h-16 text-primary" />
                   </div>
-                  <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30 hover:bg-yellow-500/30 font-inter">
+                  <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30 hover:bg-yellow-500/30 ">
                     Work In Progress
                   </Badge>
                 </div>
@@ -44,14 +44,14 @@ const Projects = () => {
 
               {/* Right side - Content */}
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <h3 className="font-poppins font-bold text-3xl mb-4 sm:group-hover:text-primary transition-colors">
+                <h3 className=" font-bold text-3xl mb-4 sm:group-hover:text-primary transition-colors">
                   Vanar Rakshak
                   <span className="block text-xl text-muted-foreground font-normal mt-2">
                     The Monkey Protector
                   </span>
                 </h3>
 
-                <p className="text-muted-foreground font-inter mb-6 leading-relaxed">
+                <p className="text-muted-foreground  mb-6 leading-relaxed">
                   An innovative AI-powered project currently in development. Vanar Rakshak aims to
                   provide a modern solution for human-wildlife conflict management. This project
                   leverages a custom-trained Machine Learning model using Python and TensorFlow to
@@ -61,7 +61,7 @@ const Projects = () => {
 
                 {/* Tech stack */}
                 <div className="mb-6">
-                  <p className="text-sm font-inter font-semibold text-foreground mb-3">
+                  <p className="text-sm  font-semibold text-foreground mb-3">
                     Technologies Used:
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -69,7 +69,7 @@ const Projects = () => {
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="bg-primary/5 border-primary/20 hover:bg-primary/10 font-inter"
+                        className="bg-primary/5 border-primary/20 hover:bg-primary/10 "
                       >
                         {tech}
                       </Badge>
@@ -79,25 +79,25 @@ const Projects = () => {
 
                 {/* Key features */}
                 <div className="mb-6">
-                  <p className="text-sm font-inter font-semibold text-foreground mb-3">
+                  <p className="text-sm  font-semibold text-foreground mb-3">
                     Key Features:
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <p className="text-sm text-muted-foreground font-inter">
+                      <p className="text-sm text-muted-foreground ">
                         Real-time monkey detection using custom ML model
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <p className="text-sm text-muted-foreground font-inter">
+                      <p className="text-sm text-muted-foreground ">
                         Humane deterrent system for wildlife management
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <p className="text-sm text-muted-foreground font-inter">
+                      <p className="text-sm text-muted-foreground ">
                         Integration with IoT sensors for automated response
                       </p>
                     </div>
@@ -108,14 +108,14 @@ const Projects = () => {
                 <div className="flex flex-wrap gap-3 mt-4">
                   <Button
                     variant="default"
-                    className="bg-primary sm:hover:bg-primary/90 font-inter"
+                    className="bg-primary sm:hover:bg-primary/90 "
                   >
                     <Github className="w-4 h-4 mr-2" />
                     View on GitHub
                   </Button>
                   <Button
                     variant="outline"
-                    className="border-primary/30 sm:hover:bg-primary/10 font-inter"
+                    className="border-primary/30 sm:hover:bg-primary/10 "
                     disabled
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
@@ -128,7 +128,7 @@ const Projects = () => {
 
           {/* Group Projects & Contributions */}
           <div className="mt-12">
-            <h3 className="text-2xl font-poppins font-bold mb-6">Group Projects & Contributions</h3>
+            <h3 className="text-2xl  font-bold mb-6">Group Projects & Contributions</h3>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
@@ -137,7 +137,7 @@ const Projects = () => {
                     <Smartphone className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Saaflo App</h4>
+                    <h4 className=" font-semibold text-lg">Saaflo App</h4>
                     <p className="text-sm text-muted-foreground mb-2">Finalist — Innovative solution for waste management and sustainability</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">Flutter</Badge>
@@ -154,7 +154,7 @@ const Projects = () => {
                     <Cpu className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Biosynth</h4>
+                    <h4 className=" font-semibold text-lg">Biosynth</h4>
                     <p className="text-sm text-muted-foreground mb-2">Finalist — Biotechnology meets synthetic biology for sustainable solutions</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
@@ -171,7 +171,7 @@ const Projects = () => {
                     <Database className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">SAI Academy</h4>
+                    <h4 className=" font-semibold text-lg">SAI Academy</h4>
                     <p className="text-sm text-muted-foreground mb-2">Comprehensive learning management system for modern education</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">Next.js</Badge>
@@ -186,7 +186,7 @@ const Projects = () => {
 
           {/* Personal & Featured Projects */}
           <div className="mt-10">
-            <h3 className="text-2xl font-poppins font-bold mb-6">Personal & Featured Projects</h3>
+            <h3 className="text-2xl  font-bold mb-6">Personal & Featured Projects</h3>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
@@ -195,7 +195,7 @@ const Projects = () => {
                     <Cpu className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Aether</h4>
+                    <h4 className=" font-semibold text-lg">Aether</h4>
                     <p className="text-sm text-muted-foreground mb-2">Cloud-native platform for seamless deployment and scaling</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">Docker</Badge>
@@ -212,7 +212,7 @@ const Projects = () => {
                     <Cpu className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">The Sentinel AI</h4>
+                    <h4 className=" font-semibold text-lg">The Sentinel AI</h4>
                     <p className="text-sm text-muted-foreground mb-2">Advanced security monitoring and threat detection system</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">AI/ML</Badge>
@@ -229,7 +229,7 @@ const Projects = () => {
                     <Database className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Heart Health Planner</h4>
+                    <h4 className=" font-semibold text-lg">Heart Health Planner</h4>
                     <p className="text-sm text-muted-foreground mb-2">Your personalized health guide made with love. Get customized nutrition plans based on your unique profile.</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
@@ -254,7 +254,7 @@ const Projects = () => {
                     <Smartphone className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">The Safe Heart Protocol</h4>
+                    <h4 className=" font-semibold text-lg">The Safe Heart Protocol</h4>
                     <p className="text-sm text-muted-foreground mb-2">A guide for parents and teens on navigating relationships safely in the modern world</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
@@ -279,7 +279,7 @@ const Projects = () => {
                     <Cpu className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Bharat AI One - My Book & Project</h4>
+                    <h4 className=" font-semibold text-lg">Bharat AI One - My Book & Project</h4>
                     <p className="text-sm text-muted-foreground mb-2">India Ultimate ChatBot - States & PM, Places & Food, Fruits & Colors, Current Time</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">AI ChatBot</Badge>
@@ -304,7 +304,7 @@ const Projects = () => {
                     <Database className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Bharat Law & Rules</h4>
+                    <h4 className=" font-semibold text-lg">Bharat Law & Rules</h4>
                     <p className="text-sm text-muted-foreground mb-2">Comprehensive legal information platform for Indian laws and regulations</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
@@ -329,7 +329,7 @@ const Projects = () => {
                     <Smartphone className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-poppins font-semibold text-lg">Tic Tac Gold</h4>
+                    <h4 className=" font-semibold text-lg">Tic Tac Gold</h4>
                     <p className="text-sm text-muted-foreground mb-2">Modern twist on the classic tic-tac-toe game with enhanced features</p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>

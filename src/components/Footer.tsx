@@ -10,10 +10,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Left side - Name and copyright */}
             <div className="text-center md:text-left">
-                <h3 className="font-poppins font-bold text-xl mb-2 text-foreground">
+                <h3 className=" font-bold text-xl mb-2 text-foreground">
                   Shaik Arafath
                 </h3>
-                <p className="text-sm text-muted-foreground font-inter">
+                <p className="text-sm text-muted-foreground ">
                   © 2025 Shaik Arafath. Built with passion for innovation and education.
                 </p>
             </div>

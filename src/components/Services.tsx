@@ -33,11 +33,11 @@ const Services = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl  font-bold mb-4">
               What I Offer
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
+            <p className="text-muted-foreground  max-w-2xl mx-auto">
               Professional services leveraging AI and development expertise
             </p>
           </div>
@@ -56,24 +56,24 @@ const Services = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-poppins font-bold text-2xl mb-4 group-hover:text-primary transition-colors">
+                <h3 className=" font-bold text-2xl mb-4 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground font-inter mb-6 leading-relaxed">
+                <p className="text-muted-foreground  mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Features list */}
                 <div className="space-y-3">
-                  <p className="text-sm font-inter font-semibold text-foreground mb-3">
+                  <p className="text-sm  font-semibold text-foreground mb-3">
                     Key Capabilities:
                   </p>
                   {service.features.map((feature) => (
                     <div 
                       key={feature}
-                      className="flex items-center gap-3 text-sm text-muted-foreground font-inter group-hover:text-foreground transition-colors"
+                      className="flex items-center gap-3 text-sm text-muted-foreground  group-hover:text-foreground transition-colors"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {feature}

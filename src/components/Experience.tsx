@@ -35,11 +35,11 @@ const Experience = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl  font-bold mb-4">
               Experience & Initiatives
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
+            <p className="text-muted-foreground  max-w-2xl mx-auto">
               Leadership roles and volunteer work that shaped my professional journey
             </p>
           </div>
@@ -67,20 +67,20 @@ const Experience = () => {
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
                       <div>
-                        <h3 className="font-poppins font-bold text-xl mb-1 text-foreground">
+                        <h3 className=" font-bold text-xl mb-1 text-foreground">
                           {exp.title}
                         </h3>
-                        <p className="text-primary font-inter font-medium">
+                        <p className="text-primary  font-medium">
                           {exp.organization}
                         </p>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground mt-2 sm:mt-0">
                         <Calendar className="w-4 h-4" />
-                        <span className="text-sm font-inter">{exp.period}</span>
+                        <span className="text-sm ">{exp.period}</span>
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground font-inter mb-4 leading-relaxed">
+                    <p className="text-muted-foreground  mb-4 leading-relaxed">
                       {exp.description}
                     </p>
 
@@ -88,7 +88,7 @@ const Experience = () => {
                       {exp.highlights.map((highlight) => (
                         <div key={highlight} className="flex items-start gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <p className="text-sm text-muted-foreground font-inter">
+                          <p className="text-sm text-muted-foreground ">
                             {highlight}
                           </p>
                         </div>

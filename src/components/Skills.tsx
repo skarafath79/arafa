@@ -36,11 +36,11 @@ const Skills = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16 sm:animate-fade-in">
-            <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl  font-bold mb-4">
               My Technical Toolkit
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
+            <p className="text-muted-foreground  max-w-2xl mx-auto">
               A comprehensive set of skills and technologies I use to build intelligent solutions
             </p>
           </div>
@@ -57,7 +57,7 @@ const Skills = () => {
                   <category.icon className="w-7 h-7 text-primary" />
                 </div>
                 
-                <h3 className="font-poppins font-semibold text-lg mb-4 sm:group-hover:text-primary transition-colors">
+                <h3 className=" font-semibold text-lg mb-4 sm:group-hover:text-primary transition-colors">
                   {category.title}
                 </h3>
                 
@@ -65,7 +65,7 @@ const Skills = () => {
                   {category.skills.map((skill) => (
                     <div 
                       key={skill}
-                      className="flex items-center gap-2 text-sm text-muted-foreground font-inter sm:group-hover:text-foreground transition-colors"
+                      className="flex items-center gap-2 text-sm text-muted-foreground  sm:group-hover:text-foreground transition-colors"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {skill}
@@ -81,12 +81,12 @@ const Skills = () => {
 
           {/* Additional skills badges + Frameworks/Databases/Tools */}
           <div className="mt-12 text-center animate-fade-in">
-            <p className="text-sm text-muted-foreground font-inter mb-4">Also familiar with:</p>
+            <p className="text-sm text-muted-foreground  mb-4">Also familiar with:</p>
             <div className="flex flex-wrap justify-center gap-3 mb-4">
               {["Git", "Linux", "Matplotlib", "OpenCV", "Jupyter", "VS Code", "Docker"].map((tech) => (
                 <span 
                   key={tech}
-                  className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-inter text-foreground sm:hover:bg-primary/20 sm:hover:border-primary/30 transition-all duration-300 cursor-default"
+                  className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm  text-foreground sm:hover:bg-primary/20 sm:hover:border-primary/30 transition-all duration-300 cursor-default"
                 >
                   {tech}
                 </span>
@@ -95,7 +95,7 @@ const Skills = () => {
 
             <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <div className="p-4 bg-card/50 rounded-lg border-border/50">
-                <h4 className="font-poppins font-semibold mb-2">Frameworks</h4>
+                <h4 className=" font-semibold mb-2">Frameworks</h4>
                 <div className="flex flex-wrap gap-2">
                   {['React', 'Next.js', 'Django REST', 'Node.js', 'Flutter'].map((fw) => (
                     <Badge key={fw} className="bg-primary/5 border-primary/20">{fw}</Badge>
@@ -104,7 +104,7 @@ const Skills = () => {
               </div>
 
               <div className="p-4 bg-card/50 rounded-lg border-border/50">
-                <h4 className="font-poppins font-semibold mb-2">Databases</h4>
+                <h4 className=" font-semibold mb-2">Databases</h4>
                 <div className="flex flex-wrap gap-2">
                   {['MySQL', 'PostgreSQL', 'Firebase'].map((db) => (
                     <Badge key={db} className="bg-primary/5 border-primary/20">{db}</Badge>
@@ -113,7 +113,7 @@ const Skills = () => {
               </div>
 
               <div className="p-4 bg-card/50 rounded-lg border-border/50">
-                <h4 className="font-poppins font-semibold mb-2">Tools & DevOps</h4>
+                <h4 className=" font-semibold mb-2">Tools & DevOps</h4>
                 <div className="flex flex-wrap gap-2">
                   {['Git', 'Docker', 'GitHub Actions', 'Render', 'Vercel'].map((tool) => (
                     <Badge key={tool} className="bg-primary/5 border-primary/20">{tool}</Badge>

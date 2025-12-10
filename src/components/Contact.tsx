@@ -72,11 +72,11 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl sm:text-5xl font-poppins font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl  font-bold mb-4">
               Let's Connect
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground font-inter max-w-2xl mx-auto">
+            <p className="text-muted-foreground  max-w-2xl mx-auto">
               I'm currently seeking new opportunities and am open to collaboration. 
               Feel free to reach out!
             </p>
@@ -87,7 +87,7 @@ const Contact = () => {
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in-up">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name" className="font-inter font-medium mb-2 block">
+                  <Label htmlFor="name" className=" font-medium mb-2 block">
                     Your Name
                   </Label>
                   <Input
@@ -96,12 +96,12 @@ const Contact = () => {
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-background/50 border-border focus:border-primary font-inter"
+                    className="bg-background/50 border-border focus:border-primary "
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="font-inter font-medium mb-2 block">
+                  <Label htmlFor="email" className=" font-medium mb-2 block">
                     Your Email
                   </Label>
                   <Input
@@ -110,12 +110,12 @@ const Contact = () => {
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-background/50 border-border focus:border-primary font-inter"
+                    className="bg-background/50 border-border focus:border-primary "
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="font-inter font-medium mb-2 block">
+                  <Label htmlFor="message" className=" font-medium mb-2 block">
                     Message
                   </Label>
                   <Textarea
@@ -123,13 +123,13 @@ const Contact = () => {
                     placeholder="Tell me about your project or opportunity..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-background/50 border-border focus:border-primary font-inter min-h-[150px] resize-none"
+                    className="bg-background/50 border-border focus:border-primary  min-h-[150px] resize-none"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 font-inter font-semibold"
+                  className="w-full bg-primary hover:bg-primary/90  font-semibold"
                   size="lg"
                 >
                   Send Message
@@ -141,7 +141,7 @@ const Contact = () => {
             {/* Social Links */}
             <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <Card className="p-8 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20">
-                <h3 className="font-poppins font-bold text-2xl mb-6">
+                <h3 className=" font-bold text-2xl mb-6">
                   Connect With Me
                 </h3>
                 
@@ -160,10 +160,10 @@ const Contact = () => {
                             <link.icon className="w-6 h-6 text-primary" />
                           </div>
                           <div>
-                            <p className="font-inter font-semibold text-foreground group-hover:text-primary transition-colors">
+                            <p className=" font-semibold text-foreground group-hover:text-primary transition-colors">
                               {link.label}
                             </p>
-                            <p className="text-sm text-muted-foreground font-inter">
+                            <p className="text-sm text-muted-foreground ">
                               {link.description || "Click to connect"}
                             </p>
                           </div>
@@ -175,7 +175,7 @@ const Contact = () => {
               </Card>
 
               <Card className="p-6 bg-primary/10 border-primary/20">
-                <p className="text-sm font-inter text-center text-muted-foreground italic">
+                <p className="text-sm  text-center text-muted-foreground italic">
                   "Open to opportunities in AI/ML, Data Science, and Software Development"
                 </p>
               </Card>
