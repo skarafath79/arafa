@@ -2,7 +2,7 @@
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink, Wrench, Database, Smartphone, Cpu } from "lucide-react";
+import { Github, ExternalLink, Wrench, Database, Smartphone, Cpu, BookOpen, Leaf, Landmark, Car, Sun } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -189,6 +189,130 @@ const Projects = () => {
             <h3 className="text-2xl  font-bold mb-6">Personal & Featured Projects</h3>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <BookOpen className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Vidya Saathi AI</h4>
+                    <p className="text-sm text-muted-foreground mb-2">My AI Learning Companion - Revolutionizing education with personalized assistance</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">AI/ML</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Education</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://vidya-saathi-ai-learning-companion.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Leaf className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Kisan Mind AI</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Agri Doctor - Empowering farmers with AI-driven crop diagnosis and advice</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">AgriTech</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">AI</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://kisan-mind-ai-agri-doctor.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Landmark className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Yojna Setu AI</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Bridging the gap between citizens and government schemes with AI</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">GovTech</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">AI</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://yojna-setu-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Car className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Safiya Drive</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Premium transportation and travel services platform</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Travel</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Web App</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://safiya-drive-welcome.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Sun className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Daily Radiance</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Your daily dose of wellness, positivity, and lifestyle inspiration</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Lifestyle</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Wellness</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://daily-radiance-project.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
               <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
