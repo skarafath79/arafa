@@ -471,6 +471,155 @@ const Projects = () => {
                   </div>
                 </div>
               </SpotlightCard>
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Smartphone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Tablet Product Scanner</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Efficiently scan and manage tablet products with this intuitive app.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Scanner</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Utility</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://tablet-product-scanner-app.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Cpu className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Ultimate 3D Calculator</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Experience calculations in a new dimension with immersive 3D visuals.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">3D</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Utility</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://ultimate-3d-calculator.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Smartphone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Cyber RPS Game</h4>
+                    <p className="text-sm text-muted-foreground mb-2">A futuristic take on the classic Rock Paper Scissors game.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Game</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Cyberpunk</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://cyber-rps-game.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Smartphone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Neon Rush</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Feel the speed in this high-octane neon-themed racing game.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Game</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Racing</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://neon-rush-ten.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Car className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Puzzle Car Game</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Challenge your mind with these engaging car-based puzzles.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Game</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Puzzle</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://new-puzzle-car-games.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <Smartphone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className=" font-semibold text-lg">Tic Tac Gold</h4>
+                    <p className="text-sm text-muted-foreground mb-2">Modern twist on the classic tic-tac-toe game with enhanced features</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">React</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Game</Badge>
+                      <Badge variant="outline" className="bg-primary/5 border-primary/20">Interactive</Badge>
+                    </div>
+                    <div className="mt-3">
+                      <Button variant="outline" size="sm" className="text-xs border-primary/30 hover:bg-primary/10" asChild>
+                        <a href="https://tic-tac-gold-ten.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
             </div>
           </div>
         </div>

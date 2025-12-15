@@ -1,6 +1,6 @@
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 // import { Card } from "@/components/ui/card"; // Kept for reference if needed, but we are replacing usage
-import { Brain, Target, TrendingUp, GraduationCap, MapPin, Heart, Users, Briefcase, Sparkles, Globe, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
+import { Brain, Target, TrendingUp, GraduationCap, MapPin, Heart, Users, Briefcase, Sparkles, Globe, Linkedin, Instagram, Twitter, Youtube, Github } from "lucide-react";
 
 const About = () => {
   return (
@@ -47,7 +47,7 @@ const About = () => {
                   </div>
 
                   <p className="text-muted-foreground  leading-relaxed mb-6">
-                    As Co-Founder and AI/ML Lead at Sikshanext, I work on designing and developing AI-powered solutions
+                    As Co-Founder and AI/ML Lead at Sikshanext, I have successfully delivered over 300+ projects and freelance assignments. I work on designing and developing AI-powered solutions
                     that support students in their learning and career growth.
                   </p>
 
@@ -144,9 +144,33 @@ const About = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
                       >
-                        <Target className="w-4 h-4" />
                         Threads
                       </a>
+                      <a
+                        href="https://www.sikshanext.in/#/projects"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Globe className="w-4 h-4" />
+                        Our Projects
+                      </a>
+                      <a
+                        href="https://github.com/sikshanextAA?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium"
+                      >
+                        <Github className="w-4 h-4" />
+                        GitHub Repos
+                      </a>
+                    </div>
+                    <div className="mt-4 flex flex-col gap-2">
+                      <p className="text-muted-foreground">For inquiries:</p>
+                      <div className="flex flex-wrap gap-4">
+                        <a href="mailto:info@sikshanext.in" className="text-primary hover:underline font-medium">info@sikshanext.in</a>
+                        <a href="mailto:skarafath@sikshanext.in" className="text-primary hover:underline font-medium">skarafath@sikshanext.in</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -228,7 +252,7 @@ const About = () => {
                 <div>
                   <h5 className=" font-semibold mb-2">Let's Connect</h5>
                   <p className="text-muted-foreground  mb-2">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
-                  <a href="mailto:contact@sikshanext.com" className="inline-block px-4 py-2 rounded-lg bg-primary text-white font-medium">Send me an email</a>
+                  <a href="mailto:info@sikshanext.in" className="inline-block px-4 py-2 rounded-lg bg-primary text-white font-medium">Send me an email</a>
                   <p className="text-sm text-muted-foreground mt-4">India</p>
                 </div>
               </div>
