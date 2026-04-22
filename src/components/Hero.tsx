@@ -139,7 +139,7 @@ const Hero = () => {
                     <span className="relative">Contact Me</span>
                   </Button>
 
-                  <a href="/ARAFATH cv.pdf" download="Shaik_Arafath_CV.pdf">
+                  <a href="/shaik_arafath.pdf" download="Shaik_Arafath_CV.pdf">
                     <Button
                       variant="outline"
                       size="lg"

@@ -50,6 +50,42 @@ const Achievements = () => {
       description: "Demonstrated technical proficiency and dedication by participating in the \"CODESTORM\" coding competition. Recognized for outstanding performance and talent in algorithmic problem solving during the Engineers' Day celebrations.",
       icon: Target,
       color: "from-orange-500 to-red-600"
+    },
+    {
+      id: 5,
+      type: "certification",
+      title: "Principles of Generative AI Certification",
+      subtitle: "Infosys Springboard",
+      organization: "Infosys",
+      date: "Apr 2026",
+      location: "Online",
+      description: "Completed comprehensive certification covering the foundational principles of Generative AI, demonstrating an understanding of modern AI technologies and their applications.",
+      icon: Award,
+      color: "from-yellow-500 to-amber-600"
+    },
+    {
+      id: 6,
+      type: "certification",
+      title: "TechA Data Analytics using Power BI Foundation",
+      subtitle: "Infosys Springboard",
+      organization: "Infosys",
+      date: "Apr 2026",
+      location: "Online",
+      description: "Acquired foundational knowledge in data analytics, utilizing Power BI to uncover insights and effectively visualize data trends.",
+      icon: Award,
+      color: "from-amber-500 to-orange-600"
+    },
+    {
+      id: 7,
+      type: "leadership",
+      title: "Technical Team Member",
+      subtitle: "IEEE Event Coordination",
+      organization: "IEEE",
+      date: "2023 - Present",
+      location: "Dehradun",
+      description: "Managed and coordinated 10+ club events, workshops, hackathons and seminars, enhancing technical skills for 200+ members through exceptional organizational and leadership efforts.",
+      icon: Users,
+      color: "from-teal-500 to-emerald-600"
     }
   ];
 
@@ -61,6 +97,8 @@ const Achievements = () => {
         return Globe;
       case 'competition':
         return Target;
+      case 'leadership':
+        return Users;
       default:
         return Award;
     }
@@ -74,6 +112,10 @@ const Achievements = () => {
         return "bg-purple-500/20 text-purple-400 border-purple-400/30";
       case 'competition':
         return "bg-orange-500/20 text-orange-400 border-orange-400/30";
+      case 'leadership':
+        return "bg-teal-500/20 text-teal-400 border-teal-400/30";
+      case 'certification':
+        return "bg-yellow-500/20 text-yellow-400 border-yellow-400/30";
       default:
         return "bg-green-500/20 text-green-400 border-green-400/30";
     }
@@ -181,7 +223,7 @@ const Achievements = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">4+</div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">7+</div>
                 <div className="text-gray-300 text-sm">Achievements</div>
               </div>
               <div className="text-center">
@@ -189,12 +231,12 @@ const Achievements = () => {
                 <div className="text-gray-300 text-sm">Hackathons</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">1</div>
-                <div className="text-gray-300 text-sm">International Conference</div>
+                <div className="text-3xl font-bold text-yellow-400 mb-2">2</div>
+                <div className="text-gray-300 text-sm">Certifications</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 mb-2">1</div>
-                <div className="text-gray-300 text-sm">Coding Competition</div>
+                <div className="text-3xl font-bold text-teal-400 mb-2">10+</div>
+                <div className="text-gray-300 text-sm">Events Managed</div>
               </div>
             </div>
           </div>
