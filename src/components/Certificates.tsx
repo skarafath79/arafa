@@ -5,57 +5,291 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: "Machine Learning Specialization",
-      issuer: "Stanford University",
-      date: "March 2024",
-      image: "/certificates/ml-stanford.jpg",
-      credentialId: "STAN-ML-2024",
-      credentialUrl: "https://coursera.org/verify/STAN-ML-2024"
+      title: "Principles of Generative AI",
+      issuer: "Infosys Springboard",
+      date: "April 18, 2026",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-GENAI-2026",
+      credentialUrl: "#"
     },
     {
       id: 2,
-      title: "Deep Learning Nanodegree",
-      issuer: "Udacity",
-      date: "February 2024",
-      image: "/certificates/deep-learning-udacity.jpg",
-      credentialId: "UD-DL-2024",
-      credentialUrl: "https://udacity.com/confirm/UD-DL-2024"
+      title: "Prepare Data for ML APIs",
+      issuer: "Google Cloud",
+      date: "December 2025",
+      image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&q=80&w=800",
+      credentialId: "GC-ML-2025",
+      credentialUrl: "https://www.cloudskillsboost.google/public_profiles/skarafath"
     },
     {
       id: 3,
-      title: "TensorFlow Developer Certificate",
-      issuer: "Google",
-      date: "January 2024",
-      image: "/certificates/tensorflow-google.jpg",
-      credentialId: "GOO-TF-2024",
-      credentialUrl: "https://certificate.google.com/GOO-TF-2024"
+      title: "Gen AI NASSCOM Certificate",
+      issuer: "SFJ & NASSCOM",
+      date: "February 2026",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+      credentialId: "NAS-GENAI-2026",
+      credentialUrl: "#"
     },
     {
       id: 4,
-      title: "AWS Certified Machine Learning",
-      issuer: "Amazon Web Services",
-      date: "December 2023",
-      image: "/certificates/aws-ml.jpg",
-      credentialId: "AWS-ML-2023",
-      credentialUrl: "https://aws.amazon.com/verify/AWS-ML-2023"
+      title: "Java Foundation Certification",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-JAVA-2026",
+      credentialUrl: "#"
     },
     {
       id: 5,
-      title: "Data Science Professional Certificate",
-      issuer: "IBM",
-      date: "November 2023",
-      image: "/certificates/data-science-ibm.jpg",
-      credentialId: "IBM-DS-2023",
-      credentialUrl: "https://ibm.com/verify/IBM-DS-2023"
+      title: "Python Foundation Certification",
+      issuer: "Infosys Springboard",
+      date: "April 18, 2026",
+      image: "https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PY-2026",
+      credentialUrl: "#"
     },
     {
       id: 6,
-      title: "Python for Data Science",
-      issuer: "DataCamp",
-      date: "October 2023",
-      image: "/certificates/python-datacamp.jpg",
-      credentialId: "DC-PY-2023",
-      credentialUrl: "https://datacamp.com/statement-of-accomplishment/DC-PY-2023"
+      title: "TechA Data Analytics using Power BI Foundation",
+      issuer: "Infosys Springboard",
+      date: "April 20, 2026",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PBI-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 7,
+      title: "Agile Scrum in Practice",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-AGILE-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 8,
+      title: "Angular Course Completion",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1509718443690-d8e2fb3af748?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-ANG-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 9,
+      title: "Artificial Intelligence",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-AI-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 10,
+      title: "Basics of Python",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PY-BAS-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 11,
+      title: "Big Data Course Completion",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1504868584819-f8eec4c1737f?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-BD-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 12,
+      title: "Cloud Technologies",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-CLOUD-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 13,
+      title: "Computer Vision 101",
+      issuer: "Infosys Springboard",
+      date: "April 4, 2026",
+      image: "https://images.unsplash.com/photo-1527430253228-e92683015112?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-CV-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 14,
+      title: "Data Science Course",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-DS-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 15,
+      title: "Deep Learning for Developers",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-DL-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 16,
+      title: "Excel Course Completion",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1599658880436-c61792e70672?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-EXCEL-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 17,
+      title: "Generative Models for Developers",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-GENMOD-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 18,
+      title: "Introduction to Artificial Intelligence",
+      issuer: "Infosys Springboard",
+      date: "April 4, 2026",
+      image: "https://images.unsplash.com/photo-1555255707-c0796f85bc3e?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-INTRO-AI-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 19,
+      title: "Introduction to Data Science",
+      issuer: "Infosys Springboard",
+      date: "March 29, 2026",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-INTRO-DS-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 20,
+      title: "Introduction to Deep Learning",
+      issuer: "Infosys Springboard",
+      date: "April 4, 2026",
+      image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-INTRO-DL-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 21,
+      title: "Introduction to NLP",
+      issuer: "Infosys Springboard",
+      date: "April 1, 2026",
+      image: "https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-INTRO-NLP-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 22,
+      title: "Introduction to OpenAI GPT Models",
+      issuer: "Infosys Springboard",
+      date: "April 11, 2026",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-GPT-MOD-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 23,
+      title: "Introduction to RPA",
+      issuer: "Infosys Springboard",
+      date: "April 4, 2026",
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-RPA-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 24,
+      title: "Java Programming Fundamentals",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-JAVA-FUN-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 25,
+      title: "Learning Microsoft Power BI",
+      issuer: "Infosys Springboard",
+      date: "April 18, 2026",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PBI-LEARN-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 26,
+      title: "GPT-3 for Developers",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-GPT3-DEV-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 27,
+      title: "Power BI Training",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PBI-TR-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 28,
+      title: "Power BI for Business Professionals",
+      issuer: "Infosys Springboard",
+      date: "April 19, 2026",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PBI-BUS-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 29,
+      title: "Prompt Engineering",
+      issuer: "Infosys Springboard",
+      date: "April 16, 2026",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      credentialId: "INF-PROMPT-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 30,
+      title: "LAKSHAGRIHA 2026 Participation",
+      issuer: "Dev Bhoomi Uttarakhand University",
+      date: "February 2026",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+      credentialId: "DBUU-HACK-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 31,
+      title: "Model Making Recognition",
+      issuer: "Uttaranchal University",
+      date: "March 2026",
+      image: "https://images.unsplash.com/photo-1460666819451-7410f5ef13ac?auto=format&fit=crop&q=80&w=800",
+      credentialId: "UU-AGRO-2026",
+      credentialUrl: "#"
+    },
+    {
+      id: 32,
+      title: "Junior Hackathon 2024",
+      issuer: "Uttaranchal University",
+      date: "May 2024",
+      image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800",
+      credentialId: "UU-JH-2024",
+      credentialUrl: "#"
     }
   ];
 
@@ -172,7 +406,7 @@ const Certificates = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-purple-500/20 px-4 py-2 rounded-lg">
-                <span className="text-purple-300 font-medium">6+ Certifications</span>
+                <span className="text-purple-300 font-medium">34+ Certifications</span>
               </div>
               <div className="bg-blue-500/20 px-4 py-2 rounded-lg">
                 <span className="text-blue-300 font-medium">500+ Hours Learning</span>
