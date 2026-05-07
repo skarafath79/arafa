@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import AnimatedLayout from "@/components/AnimatedLayout";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import VideoShowcase from "@/components/VideoShowcase";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <Skills />
         <Experience />
         <Projects />
+        <VideoShowcase />
         <AchievementStack />
         <ResearchPaper />
         <MiniApps />
