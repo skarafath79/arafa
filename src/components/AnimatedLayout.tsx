@@ -9,13 +9,15 @@ interface AnimatedLayoutProps {
 const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
   const controls = useAnimation();
   const [showDecor, setShowDecor] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     // Start animations when component mounts
     controls.start({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      scale: 1,
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
     });
 
     // Only show heavy decorations on larger screens and when user hasn't requested reduced motion
@@ -30,9 +32,16 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
     mq.addEventListener('change', update);
     reduceMotion.addEventListener('change', update);
 
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
     return () => {
       mq.removeEventListener('change', update);
       reduceMotion.removeEventListener('change', update);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [controls]);
 
@@ -43,12 +52,24 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
 
       {/* Animated Content */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40, scale: 1.05 }}
         animate={controls}
         className="relative z-10"
       >
         {children}
       </motion.div>
+
+      {/* Cursor Glow */}
+      {showDecor && (
+        <motion.div
+          className="fixed top-0 left-0 w-80 h-80 bg-primary/20 rounded-full pointer-events-none blur-[100px] z-50 mix-blend-screen"
+          animate={{
+            x: mousePos.x - 160,
+            y: mousePos.y - 160,
+          }}
+          transition={{ type: 'spring', damping: 30, stiffness: 200, mass: 0.5 }}
+        />
+      )}
 
       {/* Glow Effects (desktop only) */}
       {showDecor && (

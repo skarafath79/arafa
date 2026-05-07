@@ -1,152 +1,174 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Preloader = ({ onComplete }: { onComplete: () => void }) => {
-    const [loadingStep, setLoadingStep] = useState(0);
+    const [progress, setProgress] = useState(0);
     const [displayText, setDisplayText] = useState('');
-    const [glitchText, setGlitchText] = useState('');
-    const [showAccessGranted, setShowAccessGranted] = useState(false);
     const [exiting, setExiting] = useState(false);
+    const [isStarted, setIsStarted] = useState(false);
+    const [showStartButton, setShowStartButton] = useState(true);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
-    // Steps matching the narrative
-    const steps = [
-        { text: "INITIALIZING NEURAL LINK...", delay: 800 },
-        { text: "DECRYPTING BIOS PROTECOLS...", delay: 1500 },
-        { text: "LOADING HOLOGRAPHIC ASSETS...", delay: 2400 },
-        { text: "SYNCHRONIZING CORE SUBSYSTEMS...", delay: 3200 },
-        { text: "ESTABLISHING SECURE CONNECTION...", delay: 4000 }
-    ];
+    const fullText = "Creative Developer | AI Enthusiast | Designer";
+    
+    // Typing effect logic
+    useEffect(() => {
+        if (!isStarted) return;
+        
+        let index = 0;
+        const timer = setInterval(() => {
+            setDisplayText(fullText.slice(0, index));
+            index++;
+            if (index > fullText.length) clearInterval(timer);
+        }, 50);
+        return () => clearInterval(timer);
+    }, [isStarted]);
 
-    // Random character generator for Matrix effect
-    const randomChar = () => {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*';
-        return chars.charAt(Math.floor(Math.random() * chars.length));
+    // Progress bar logic
+    useEffect(() => {
+        if (!isStarted) return;
+
+        const interval = setInterval(() => {
+            setProgress(prev => {
+                if (prev >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        setExiting(true);
+                        setTimeout(onComplete, 1200); // Wait for exit animation
+                    }, 1000);
+                    return 100;
+                }
+                return prev + 1;
+            });
+        }, 40); // Total ~4 seconds loading
+        return () => clearInterval(interval);
+    }, [isStarted, onComplete]);
+
+    // AI Voice Welcome
+    const speakWelcome = () => {
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance("Hey, welcome to Arafath’s portfolio website.");
+            // Try to find a good male voice
+            const voices = window.speechSynthesis.getVoices();
+            const maleVoice = voices.find(voice => voice.name.includes('Male') || voice.name.includes('David') || voice.name.includes('Google US English'));
+            if (maleVoice) utterance.voice = maleVoice;
+            utterance.pitch = 0.9;
+            utterance.rate = 0.95;
+            window.speechSynthesis.speak(utterance);
+        }
     };
 
-    useEffect(() => {
-        let currentStepIndex = 0;
-
-        const sequenceInterval = setInterval(() => {
-            if (currentStepIndex < steps.length) {
-                setDisplayText(steps[currentStepIndex].text);
-                setLoadingStep(prev => prev + 1);
-                currentStepIndex++;
-            } else {
-                clearInterval(sequenceInterval);
-                // Final sequence
-                setDisplayText("IDENTITY VERIFIED: ADMIN");
-                setTimeout(() => {
-                    setShowAccessGranted(true);
-                    setTimeout(() => {
-                        setExiting(true); // Trigger exit animation
-                        setTimeout(onComplete, 800); // Wait for exit animation
-                    }, 1500);
-                }, 1000);
-            }
-        }, 800); // Slightly faster transitions for hype
-
-        // Glitch effect loop
-        const glitchInterval = setInterval(() => {
-            let glitches = '';
-            for (let i = 0; i < 10; i++) glitches += randomChar();
-            setGlitchText(glitches);
-        }, 50);
-
-        return () => {
-            clearInterval(sequenceInterval);
-            clearInterval(glitchInterval);
-        };
-    }, [onComplete]);
+    const handleStart = () => {
+        setIsStarted(true);
+        setShowStartButton(false);
+        speakWelcome();
+        if (audioRef.current) {
+            audioRef.current.volume = 0.2;
+            audioRef.current.play().catch(e => console.log("Audio play blocked", e));
+        }
+    };
 
     return (
-        <div className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden perspective-1000 ${exiting ? 'animate-[cinematic-fade-out_0.8s_forwards]' : ''}`}>
+        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden perspective-1000 ${exiting ? 'animate-cinematic-fade-out' : ''}`}>
+            {/* Background Music */}
+            <audio 
+                ref={audioRef}
+                src="https://cdn.pixabay.com/audio/2022/03/24/audio_3d1a84f5f5.mp3" // Cinematic soft track
+                loop
+            />
 
-            {/* Background - Cyber Grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)] animate-[pulse_4s_infinite]"></div>
-
-            {/* Moving stars/particles */}
-            <div className="absolute inset-0 overflow-hidden opacity-30">
-                {[...Array(20)].map((_, i) => (
-                    <div key={i}
-                        className="absolute bg-white rounded-full animate-float"
+            {/* Particles / Floating Light Effects */}
+            <div className="absolute inset-0 pointer-events-none">
+                {[...Array(30)].map((_, i) => (
+                    <div 
+                        key={i}
+                        className="absolute w-1 h-1 bg-cyan-400/30 rounded-full blur-[1px] animate-float-particle"
                         style={{
-                            top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`,
-                            width: `${Math.random() * 3}px`,
-                            height: `${Math.random() * 3}px`,
-                            animationDuration: `${Math.random() * 3 + 2}s`
-                        }}
+                            top: `${Math.random() * 100}%`,
+                            '--duration': `${10 + Math.random() * 20}s`,
+                            '--delay': `${-Math.random() * 20}s`
+                        } as any}
                     />
                 ))}
             </div>
 
-            {/* Main Container - HUD Style */}
-            <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl p-8 border-y-2 border-cyan-900/50 bg-black/40 backdrop-blur-sm">
-
-                {/* Top Scanner Line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent animate-scanline opacity-50"></div>
-
-                {/* Central Reactor / Spinner */}
-                <div className="relative mb-12 group">
-                    <div className="absolute -inset-4 bg-cyan-500/20 rounded-full blur-xl animate-pulse group-hover:bg-purple-500/20 transition-colors duration-500"></div>
-
-                    {/* Center Emblem/Text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-4xl font-bold text-cyan-400 animate-hologram">
-                            {showAccessGranted ? '✓' : Math.floor((loadingStep / steps.length) * 100)}%
-                        </span>
-                    </div>
-
-                    {/* Spinner Rings */}
-                    <div className="w-48 h-48 rounded-full border-4 border-cyan-900/30 border-t-cyan-500 animate-[spin_2s_linear_infinite] shadow-[0_0_20px_rgba(6,182,212,0.3)]"></div>
-                    <div className="absolute top-2 left-2 right-2 bottom-2 rounded-full border-2 border-purple-900/30 border-b-purple-500 animate-[spin_3s_linear_infinite_reverse]"></div>
-                    <div className="absolute top-8 left-8 right-8 bottom-8 rounded-full border border-dashed border-cyan-500/50 animate-[spin_8s_linear_infinite]"></div>
-                </div>
-
-                {/* Text Area */}
-                <div className="text-center space-y-4">
-                    {showAccessGranted ? (
-                        <div className="space-y-2 animate-[fade-in-up_0.5s_ease-out]">
-                            <h1 className="text-6xl md:text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-white to-purple-500 drop-shadow-[0_0_10px_rgba(6,182,212,0.8)] animate-pulse">
-                                WELCOME
-                            </h1>
-                            <p className="text-cyan-300 font-mono tracking-[0.5em] text-sm uppercase">Access Granted // Initiate Protocol 739</p>
-                        </div>
-                    ) : (
-                        <div className="flex flex-col items-center h-24">
-                            <h2 className="text-xl md:text-2xl font-bold font-mono text-cyan-500 animate-glitch min-h-[32px]">
-                                {displayText}
-                            </h2>
-                            <p className="mt-2 text-xs font-mono text-cyan-800 opacity-70">
-                                {glitchText} - SYSTEM ID: {Math.random().toString(36).substring(7).toUpperCase()}
-                            </p>
-
-                            {/* Progress Bar */}
-                            <div className="w-64 h-1 bg-gray-900 mt-6 rounded overflow-hidden relative">
-                                <div
-                                    className="absolute top-0 left-0 h-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"
-                                    style={{ width: `${(loadingStep / steps.length) * 100}%`, transition: 'width 0.5s cubic-bezier(0.22, 1, 0.36, 1)' }}
-                                ></div>
+            {/* Glassmorphism Container */}
+            <AnimatePresence>
+                {showStartButton ? (
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.1 }}
+                        onClick={handleStart}
+                        className="relative z-10 px-8 py-4 glass-morphism rounded-full text-cyan-400 font-mono tracking-widest hover:text-white hover:border-cyan-400 transition-all duration-500 group shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+                    >
+                        <span className="absolute inset-0 rounded-full bg-cyan-400/10 blur-md group-hover:bg-cyan-400/20 transition-all"></span>
+                        INITIALIZE CINEMATIC EXPERIENCE
+                    </motion.button>
+                ) : (
+                    <div className="relative z-10 flex flex-col items-center max-w-2xl w-full px-6">
+                        {/* 3D Rotating Logo/Icon */}
+                        <div className="relative w-32 h-32 mb-12 animate-rotate-3d transform-style-3d">
+                            <div className="absolute inset-0 border-2 border-cyan-500/50 rounded-xl glass-morphism translate-z-10"></div>
+                            <div className="absolute inset-0 border-2 border-purple-500/50 rounded-xl glass-morphism -translate-z-10 rotate-45"></div>
+                            <div className="absolute inset-0 flex items-center justify-center translate-z-20">
+                                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg shadow-[0_0_30px_#06b6d4]"></div>
                             </div>
                         </div>
-                    )}
+
+                        {/* Welcome Text */}
+                        <motion.h1 
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            className="text-3xl md:text-5xl font-black text-center mb-4 tracking-tighter text-white"
+                        >
+                            <span className="text-glow-blue">Welcome to</span>
+                            <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-glow-purple uppercase">
+                                Arafath Portfolio
+                            </span>
+                        </motion.h1>
+
+                        {/* Typing Effect Subtitle */}
+                        <div className="h-8 mb-12">
+                            <p className="text-cyan-400/80 font-mono text-sm md:text-lg tracking-widest text-center">
+                                {displayText}
+                                <span className="animate-pulse ml-1">|</span>
+                            </p>
+                        </div>
+
+                        {/* Progress Bar & Counter */}
+                        <div className="w-full max-w-md">
+                            <div className="flex justify-between mb-2 font-mono text-xs text-cyan-500/70 uppercase tracking-widest">
+                                <span>System Loading...</span>
+                                <span>{progress}%</span>
+                            </div>
+                            <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden relative">
+                                <motion.div 
+                                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-cyan-500 to-purple-600 shadow-[0_0_15px_#06b6d4]"
+                                    style={{ width: `${progress}%` }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </AnimatePresence>
+
+            {/* Social Media Icons (Static or low-key in preloader) */}
+            {!showStartButton && (
+                <div className="absolute bottom-12 flex gap-6 animate-reveal">
+                    {['github', 'linkedin', 'twitter'].map((social) => (
+                        <div 
+                            key={social}
+                            className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center text-cyan-400/50 hover:text-cyan-400 hover:scale-110 transition-all cursor-pointer border border-cyan-400/10 hover:border-cyan-400/50 shadow-lg"
+                        >
+                            <i className={`fab fa-${social}`}></i>
+                        </div>
+                    ))}
                 </div>
-
-                {/* Corner Decorators (HUD elements) */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-cyan-600"></div>
-                <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-cyan-600"></div>
-                <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-cyan-600"></div>
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-cyan-600"></div>
-
-            </div>
-
-            {/* Footer System Info */}
-            <div className="absolute bottom-8 left-0 w-full flex justify-between px-12 text-[10px] text-cyan-900 font-mono uppercase">
-                <span>Mem: {256 + loadingStep * 124}TB</span>
-                <span>Secure :: {showAccessGranted ? 'LOCK' : 'OPEN'}</span>
-                <span>V.2.0.45</span>
-            </div>
-
+            )}
         </div>
     );
 };

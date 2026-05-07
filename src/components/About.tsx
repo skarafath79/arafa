@@ -19,7 +19,7 @@ const About = () => {
           <div className="mb-12 sm:animate-fade-in-up">
             <SpotlightCard className="p-8 bg-card/50 sm:backdrop-blur-sm border-border/50">
               <p className="text-lg text-muted-foreground  leading-relaxed text-center max-w-4xl mx-auto">
-                A motivated and aspiring B.Tech CSE 3rd Year student with a strong academic foundation from Khammam, Telangana.
+                A motivated and aspiring B.Tech CSE 4th Year student with a strong academic foundation from Khammam, Telangana.
                 Co-Founder & AI/ML Lead at Sikshanext, passionate about building AI-powered solutions that empower students.
                 Combining academic excellence with innovation, technology, and a drive to create meaningful impact.
               </p>
@@ -42,7 +42,7 @@ const About = () => {
                     <div>
                       <h4 className=" font-bold text-2xl mb-2 text-primary">Co-Founder & AI/ML Lead</h4>
                       <p className="text-xl font-semibold text-foreground mb-1">Sikshanext</p>
-                      <p className="text-muted-foreground ">B.Tech CSE 3rd Year | Student Innovator</p>
+                      <p className="text-muted-foreground ">B.Tech CSE 4th Year | Student Innovator</p>
                     </div>
                   </div>
 
@@ -82,7 +82,7 @@ const About = () => {
                       Impact & Vision
                     </h5>
                     <p className="text-muted-foreground  leading-relaxed ml-7">
-                      This role allows me to combine my academic journey in B.Tech CSE (3rd year) with my passion for
+                      This role allows me to combine my academic journey in B.Tech CSE (4th year) with my passion for
                       innovation, AI, and student empowerment. Building solutions that make a real difference in students' lives.
                     </p>
                   </div>
